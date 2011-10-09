@@ -43,14 +43,14 @@ dofile( "shell/shell.lua" )
 dofile( "shell/gui.lua" )
 
 microlua = Image.load( "art/etc/ml.png", RAM )
-b12core = Image.load( "art/etc/b12.png", RAM )
+x711Li = Image.load( "art/etc/x711Li.png", RAM )
 font = Font.load( "fonts/pw_international.oft" )
 namefont = Font.load( "fonts/pw_name.oft" )
 arial = Font.load( "fonts/arial.oft" )
 
 --  Construct script variables/functions
 
---  Show Micro Lua DS/B12CORE logos.
+--  Show Micro Lua DS/x711Li logos.
 --  PLEASE DO NOT REMOVE/ALTER THIS,
 --  credits given where due.
 
@@ -59,7 +59,7 @@ tmr:start()
 
 while tmr:time() < 1 do
 	screen.blit( SCREEN_UP, 0, 0, microlua )
-	screen.blit( SCREEN_DOWN, 0, 0, b12core )
+	screen.blit( SCREEN_DOWN, 0, 0, x711Li )
 	render()
 end
 
@@ -67,7 +67,7 @@ end
 
 Image.destroy( microlua )
 microlua = nil
-Image.destroy( b12core )
+Image.destroy( x711Li )
 b12core = nil
 tmr = nil
 
