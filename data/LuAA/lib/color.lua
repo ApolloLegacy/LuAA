@@ -1,14 +1,14 @@
 --[[
                      _               ____ ____
                     | |             / _  |  _ \
-                    | |      __  __/ /_| | |_\ \ 
+                    | |      __  __/ /_| | |_\ \
                     | |     / / / /  __  |  __  \
-                    | |____/ /_/ /  /  | | |  \  \ 
+                    | |____/ /_/ /  /  | | |  \  \
                     |______\____/__/   |_|_|   \__\
-                    
+
     Name :          LuAA - color.lua
                     Color library.
-    Purpose :        
+    Purpose :
                     LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed 1st in the Neoflash Spring Coding Competition 2009, originally named AceAttorneyDS (http://www.neoflash.com/forum/index.php?topic=5557.0), winning a $300 prize.
 
     Author :        Copyright 2009 Daniel Li (http://x711Li.com/)
@@ -21,9 +21,9 @@
                     You should have received a copy of the GNU General Public License along with LuAA. If not, see http://www.gnu.org/licenses/.
 ]]
 
-function tocolor (aColor)
-    local red = aColor:sub (1, 2)
-    local green = aColor:sub (3, 4)
-    local blue = aColor:sub (5, 6)
-    return Color.new (tonumber ("0x"..red) / 8.25, tonumber ("0x"..green) / 8.25, tonumber ("0x"..blue) / 8.25)
+function tocolor(aColor)
+    local red = aColor:sub(1, 2)
+    local green = aColor:sub(3, 4)
+    local blue = aColor:sub(5, 6)
+    return Color.new(tonumber("0x"..red) / 8.25, tonumber("0x"..green) / 8.25, tonumber("0x"..blue) / 8.25)
 end

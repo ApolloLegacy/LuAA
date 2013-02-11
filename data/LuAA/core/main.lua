@@ -23,11 +23,10 @@
 
 -- import dependencies
 
-System.changeDirectory("/LuAA/")
+System.changeDirectory("..")
 
 dofile("lib/const.lua")
 dofile("lib/screen.lua")
--- dofile("lib/controls.lua")
 dofile("lib/timer.lua")
 dofile("lib/debug.lua")
 dofile("lib/system.lua")

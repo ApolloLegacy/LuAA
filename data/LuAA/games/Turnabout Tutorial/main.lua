@@ -1,14 +1,14 @@
 --[[
                      _               ____ ____
                     | |             / _  |  _ \
-                    | |      __  __/ /_| | |_\ \ 
+                    | |      __  __/ /_| | |_\ \
                     | |     / / / /  __  |  __  \
-                    | |____/ /_/ /  /  | | |  \  \ 
+                    | |____/ /_/ /  /  | | |  \  \
                     |______\____/__/   |_|_|   \__\
-                    
+
     Name :          LuAA - main.lua
                     Turnabout Tutorial Example Script!
-    Purpose :        
+    Purpose :
                     LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed 1st in the Neoflash Spring Coding Competition 2009, originally named AceAttorneyDS (http://www.neoflash.com/forum/index.php?topic=5557.0), winning a $300 prize.
 
     Author :        Copyright 2009 Daniel Li (http://x711Li.com/)
@@ -89,7 +89,7 @@ function scene2()
     newalign(ALIGN_LEFT)
     newcolor("FFFFFF")
     newspeaker(nil)
-    alpha_in(SCREEN_UP, 1, "art/char/Gumshoe/thinking(talk)", 1536)
+    --alpha_in(SCREEN_UP, 1, "art/char/Gumshoe/thinking(talk)", 1536)
     newspeaker("Gumshoe", SFX_BLIPMALE)
     addev(pr_gumshoe)
     newchar("Gumshoe", "thinking", "talk", "blink")

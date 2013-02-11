@@ -31,7 +31,10 @@ function char.construct(action)
     char.x = 0
     char.y = 0
     local path = "art/char/" .. char.name .. "/" .. char.emotion
-    if action then path = "art/char/" .. char.name .. "/" .. char.emotion .. "(" .. action .. ")" end
+
+    if action then
+        path = "art/char/" .. char.name .. "/" .. char.emotion .. "(" .. action .. ")"
+    end
 
     dofile(path .. ".lua")
     char.size = size
@@ -65,5 +68,6 @@ function char.draw(timer)
         end
         Map.scroll(char.map, char.x + shake_event.x, char.y + shake_event.y)
     end
+
     Map.draw(SCREEN_UP, char.map, 0, 0, 32, 24)
 end
