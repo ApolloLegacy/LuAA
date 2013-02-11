@@ -25,84 +25,84 @@ dynamic = false
 talked = {}
 
 function move()
-	gui.deconstruct()
-	dynamic = false
-	opt = movOpt
-	dofile( "shell/gui/options.lua" )
+    gui.deconstruct()
+    dynamic = false
+    opt = movOpt
+    dofile("shell/gui/options.lua")
 end
 
 function talk()
-	gui.deconstruct()
-	opt = tlkOpt
-	dynamic = false
-	dofile( "shell/gui/options.lua" )
+    gui.deconstruct()
+    opt = tlkOpt
+    dynamic = false
+    dofile("shell/gui/options.lua")
 end
 
-function dynamicoptions( ... )
-	newdyn( ... )
-	gui.deconstruct()
-	dynamic = true
-	opt = dynOpt
-	dofile( "shell/gui/options.lua" )
-	talking = false
-	while not talking do
-		gui.update()
-	end
+function dynamicoptions(...)
+    newdyn(...)
+    gui.deconstruct()
+    dynamic = true
+    opt = dynOpt
+    dofile("shell/gui/options.lua")
+    talking = false
+    while not talking do
+        gui.update()
+    end
 end
 
-function hasopt( opt )
-	local found = false
-	
-	for i,v in ipairs ( tlkOpt ) do
-		if v.text == opt then
-			found = true
-			return found
-		end
-	end
-	for i,v in ipairs ( movOpt ) do
-		if v.text == opt then
-			found = true
-			return found
-		end
-	end
-	
-	return found
+function hasopt(opt)
+    local found = false
+    
+    for i,v in ipairs (tlkOpt) do
+        if v.text == opt then
+            found = true
+            return found
+        end
+    end
+    for i,v in ipairs (movOpt) do
+        if v.text == opt then
+            found = true
+            return found
+        end
+    end
+    
+    return found
 end
 
-function newopt( ... )
-	local optset = {}
-	for i = 1, select( "#", ... ) do
-		optset[ i ] = {}
-		optset[ i ].text = select( i, ... )
-	end
-	
-	return optset
+function newopt(...)
+    local optset = {}
+    for i = 1, select("#", ...) do
+        optset[i] = {}
+        optset[i].text = select(i, ...)
+    end
+    
+    return optset
 end
 
-function newmovopt( ... )
-	local optset = {}
-	for i = 1, select( "#", ... ) do
-		optset[ i ] = {}
-		optset[ i ].text = select( i, ... ).name
-		optset[ i ].path = select( i, ... ).pic
-	end
-	
-	return optset
+function newmovopt(...)
+    local optset = {}
+    for i = 1, select("#", ...) do
+        optset[i] = {}
+        optset[i].text = select(i, ...).name
+        optset[i].path = select(i, ...).pic
+    end
+    
+    return optset
 end
 
-function addtlk( opt )
-	local optset = {}
-	optset.text = opt:gsub( "_", "" )
-	optset.script = opt:gsub( " ", "_" )
-	table.insert( tlkOpt, optset )
+function addtlk(opt)
+    local optset = {}
+    optset.text = opt:gsub("_", "")
+    optset.script = opt:gsub(" ", "_")
+    table.insert(tlkOpt, optset)
 end
 
-function newtlk( ... )
-	tlkOpt = newopt( ... )
+function newtlk(...)
+    tlkOpt = newopt(...)
 end
-function newmov( ... )
-	movOpt = newmovopt( ... )
+function newmov(...)
+    movOpt = newmovopt(...)
 end
-function newdyn( ... )
-	dynOpt = newopt( ... )
+function newdyn(...)
+    dynOpt = newopt(...)
 end

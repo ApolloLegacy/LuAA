@@ -28,57 +28,57 @@ state = 0
 direction = 1
 
 if DYNAMIC_GUI == false then
-	btn = {}
-	gui.loadBtn( "Court Record" )
+    btn = {}
+    gui.loadBtn("Court Record")
 end
 
 gui.draw = function()
-	gui[ "BACKGROUND" ].draw()
-	gui[ "ADV_BTN" ].draw( 16, 40, 224, 112, "Advance" )
-	if not talking then
+    gui["BACKGROUND"].draw()
+    gui["ADV_BTN"].draw(16, 40, 224, 112, "Advance")
+    if not talking then
 
-		gui[ "TRIANGLE" ].draw( SCREEN_DOWN, 112 + state * 4, 82, 148 + state * 4, 96, 112 + state * 4, 108, PW_WHITE )
-		gui[ "TRIANGLE" ].draw( SCREEN_UP, 248 + state * 1, 178, 254 + state * 1, 185, 248 + state * 1, 190, PW_WHITE )
-		
-		if direction == 1 then
-			state = state + 1
-		elseif direction == 0 then
-			state = state - 1
-		end
+        gui["TRIANGLE"].draw(SCREEN_DOWN, 112 + state * 4, 82, 148 + state * 4, 96, 112 + state * 4, 108, PW_WHITE)
+        gui["TRIANGLE"].draw(SCREEN_UP, 248 + state * 1, 178, 254 + state * 1, 185, 248 + state * 1, 190, PW_WHITE)
+        
+        if direction == 1 then
+            state = state + 1
+        elseif direction == 0 then
+            state = state - 1
+        end
 
-		if state == -1 then
-			direction = 1
-		elseif state == 1 then
-			direction = 0
-		end
-	end
-	gui[ "SCAN_LINES" ].draw()
-	gui[ "MENU_PANEL" ].draw()
-	gui[ "MENU_BTN" ].draw( 176, 0, 80, 32, "Court Record", 0, 1 )
+        if state == -1 then
+            direction = 1
+        elseif state == 1 then
+            direction = 0
+        end
+    end
+    gui["SCAN_LINES"].draw()
+    gui["MENU_PANEL"].draw()
+    gui["MENU_BTN"].draw(176, 0, 80, 32, "Court Record", 0, 1)
 end
 
 gui.fade_in()
 
 gui.deconstruct = function()
-	gui.fade_out()
-	cmd = nil
-	if DYNAMIC_GUI == false then
-		Image.destroy( btn["Court Record"] )
-		btn["Court Record"] = nil
-	end
+    gui.fade_out()
+    cmd = nil
+    if DYNAMIC_GUI == false then
+        Image.destroy(btn["Court Record"])
+        btn["Court Record"] = nil
+    end
 end
 
 gui.update = function()
-	shell.draw()
-	Controls.read()
-	if ( Stylus.released and pointCollide( cmd[ "Advance" ], Stylus ) ) or Keys.newPress.A then
-		gui.click( "ADV_BTN", "Advance" )
-		talking = true
-	elseif ( Stylus.released and pointCollide( cmd[ "Court Record" ], Stylus ) ) or Keys.newPress.R then
-		gui.click( "MENU_BTN", "Court Record", 1 )		
-		gui.saved[ 1 ] = "advance"
-		gui.construct( "courtrecord" )
-	end
-	if not clicking then render() end
-	if talking == true then clicking = false end
+    shell.draw()
+    Controls.read()
+    if (Stylus.released and pointCollide(cmd["Advance"], Stylus)) or Keys.newPress.A then
+        gui.click("ADV_BTN", "Advance")
+        talking = true
+    elseif (Stylus.released and pointCollide(cmd["Court Record"], Stylus)) or Keys.newPress.R then
+        gui.click("MENU_BTN", "Court Record", 1)        
+        gui.saved[1] = "advance"
+        gui.construct("courtrecord")
+    end
+    if not clicking then render() end
+    if talking == true then clicking = false end
 end

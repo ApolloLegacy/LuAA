@@ -24,7 +24,7 @@
 talking = false
 
 function advance()
-	testimony = nil
-	gui.deconstruct()
-	dofile( "shell/gui/advance.lua" )
+    testimony = nil
+    gui.deconstruct()
+    dofile("shell/gui/advance.lua")
 end

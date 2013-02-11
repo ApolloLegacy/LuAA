@@ -24,29 +24,29 @@
 hp = 80
 
 function crossexam()
-	gui.deconstruct()
-	dofile( "shell/gui/testimony.lua" )
-	testimony = {}
-	press = {}
-	tsm_line = 1
+    gui.deconstruct()
+    dofile("shell/gui/testimony.lua")
+    testimony = {}
+    press = {}
+    tsm_line = 1
 end
 
-function addhp( newhp )
-	if type( newhp ) == "number" then	
-		hp = hp + newhp
-	end
+function addhp(newhp)
+    if type(newhp) == "number" then    
+        hp = hp + newhp
+    end
 
-	if hp < 0 then
-		hp = 0
-	elseif hp > 80 then
-		hp = 80
-	end
-	risked_hp = nil
+    if hp < 0 then
+        hp = 0
+    elseif hp > 80 then
+        hp = 80
+    end
+    risked_hp = nil
 end
 
-function showrisk( rhp )
-	risked_hp = {}
-	risked_hp.alpha = 0
-	risked_hp.direction = 1
-	risked_hp.hp = rhp
+function showrisk(rhp)
+    risked_hp = {}
+    risked_hp.alpha = 0
+    risked_hp.direction = 1
+    risked_hp.hp = rhp
 end

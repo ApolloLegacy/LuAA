@@ -1,14 +1,14 @@
 --[[
                      _               ____ ____
                     | |             / _  |  _ \
-                    | |      __  __/ /_| | |_\ \ 
+                    | |      __  __/ /_| | |_\ \
                     | |     / / / /  __  |  __  \
-                    | |____/ /_/ /  /  | | |  \  \ 
+                    | |____/ /_/ /  /  | | |  \  \
                     |______\____/__/   |_|_|   \__\
-                    
+
     Name :          LuAA - collision.lua
                     Collision library.
-    Purpose :        
+    Purpose :
                     LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed 1st in the Neoflash Spring Coding Competition 2009, originally named AceAttorneyDS (http://www.neoflash.com/forum/index.php?topic=5557.0), winning a $300 prize.
 
     Author :        Copyright 2009 Daniel Li (http://x711Li.com/)
@@ -21,17 +21,18 @@
                     You should have received a copy of the GNU General Public License along with LuAA. If not, see http://www.gnu.org/licenses/.
 ]]
 
-function newRect( X1, Y1, X2, Y2 )
-	local aRect = {}
-	aRect.X1 = X1
-	aRect.Y1 = Y1
-	aRect.X2 = X2
-	aRect.Y2 = Y2
-	return aRect
+function newRect(X1, Y1, X2, Y2)
+    local aRect = {}
+    aRect.X1 = X1
+    aRect.Y1 = Y1
+    aRect.X2 = X2
+    aRect.Y2 = Y2
+    return aRect
 end
 
-function pointCollide( aRect, aPoint )
-	if aPoint.X > aRect.X1 and aPoint.X < aRect.X2 and aPoint.Y > aRect.Y1 and aPoint.Y < aRect.Y2 then 
-		return true 
-	end
+function pointCollide(aRect, aPoint)
+    if aRect ~= nil and aPoint ~= nil and
+       aPoint.X > aRect.X1 and aPoint.X < aRect.X2 and aPoint.Y > aRect.Y1 and aPoint.Y < aRect.Y2 then
+        return true
+    end
 end

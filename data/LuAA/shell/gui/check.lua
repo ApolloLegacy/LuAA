@@ -1,14 +1,14 @@
 --[[
                      _               ____ ____
                     | |             / _  |  _ \
-                    | |      __  __/ /_| | |_\ \ 
+                    | |      __  __/ /_| | |_\ \
                     | |     / / / /  __  |  __  \
-                    | |____/ /_/ /  /  | | |  \  \ 
+                    | |____/ /_/ /  /  | | |  \  \
                     |______\____/__/   |_|_|   \__\
-                    
+
     Name :          LuAA - check.lua
                     Constructs methods for drawing/updating the check GUI.
-    Purpose :        
+    Purpose :
                     LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed 1st in the Neoflash Spring Coding Competition 2009, originally named AceAttorneyDS (http://www.neoflash.com/forum/index.php?topic=5557.0), winning a $300 prize.
 
     Author :        Copyright 2009 Daniel Li (http://x711Li.com/)
@@ -27,29 +27,29 @@ paused = true
 
 cmd = {}
 
-Image.destroy( bg_img )
+Image.destroy(bg_img)
 bg_img = nil
 
 gui.deconstruct() = function()
-	cmd = nil
-	Image.destroy(check_img)
-	check_img = nil
-	bg_img = Image.load( "art/bg/" .. bg.path .. ".gif", RAM )
+    cmd = nil
+    Image.destroy(check_img)
+    check_img = nil
+    bg_img = Image.load("art/bg/" .. bg.path .. ".gif", RAM)
 end
 
 gui.draw = function()
-	screen.blit( SCREEN_DOWN, 0, 0, check_img )
-	gui[ "MENU_BTN" ].draw( 0, 160, 80, 32, "Back", 0, 2 )
+    screen.blit(SCREEN_DOWN, 0, 0, check_img)
+    gui["MENU_BTN"].draw(0, 160, 80, 32, "Back", 0, 2)
 end
 
 gui.update = function()
-	shell.draw()
+    shell.draw()
 
-	Controls.read()
-	if ( Stylus.released and pointCollide( cmd[ "Back" ], Stylus ) ) or Keys.newPress.B then
-		gui.deconstruct()
-		gui.construct("courtrecord")
-	end
+    Controls.read()
+    if (Stylus.released and pointCollide(cmd["Back"], Stylus)) or Keys.newPress.B then
+        gui.deconstruct()
+        gui.construct("courtrecord")
+    end
 
-	if not clicking then render() end
+    if not clicking then render() end
 end

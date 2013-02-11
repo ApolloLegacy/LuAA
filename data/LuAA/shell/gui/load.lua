@@ -27,18 +27,18 @@ cmd = {}
 
 optSelected = 1
 
-logo = Image.load( "art/etc/title.gif", RAM )
+logo = Image.load("art/etc/title.gif", RAM)
 
-gui.deconstruct = function()	
-	cmd = nil
-	optSelected = nil
-	Image.destroy(logo)
-	logo = nil
+gui.deconstruct = function()    
+    cmd = nil
+    optSelected = nil
+    Image.destroy(logo)
+    logo = nil
 end
 
 load__struct = loadAndDecryptFile("games/game.sav", {251, 662, 93, 44, 77})
 game = load__struct.game
-chapter = load__struct.chapter	
+chapter = load__struct.chapter    
 hp = load__struct.hp
 evidence = load__struct.evidence
 profile = load__struct.profile
@@ -46,50 +46,50 @@ bookmark = load__struct.bookmark
 load__struct = nil
 
 gui.draw = function()
-	screen.blit( SCREEN_UP, 0, 0, logo )
-	gui[ "BACKGROUND" ].draw()
-	screen.drawFillRect( SCREEN_DOWN, 30, 14, 226, 98, PW_BROWN )
-	gui[ "BORDER" ].draw( SCREEN_DOWN, 30, 14, 196, 84 )
-	gui[ "CENTER_TXT" ].draw( 30, 18, 196, 25, game)
-	gui[ "CENTER_TXT" ].draw( 30, 39, 196, 20, chapter)
-	gui[ "CENTER_TXT" ].draw( 30, 64, 196, 20, "Load game?")
-	gui[ "OPT_BTN" ].draw( 23, 119, 92, 26, "Yes" )
-	gui[ "OPT_BTN" ].draw( 140, 119, 92, 26, "No" )
-	gui[ "OPT_CURSOR" ].draw(cmd[ optSelected ].X1, cmd[ optSelected ].Y1, cmd[ optSelected ].X2 - cmd[ optSelected ].X1, cmd[ optSelected ].Y2 - cmd[ optSelected ].Y1)
-	gui[ "SCAN_LINES" ].draw()
+    screen.blit(SCREEN_UP, 0, 0, logo)
+    gui["BACKGROUND"].draw()
+    screen.drawFillRect(SCREEN_DOWN, 30, 14, 226, 98, PW_BROWN)
+    gui["BORDER"].draw(SCREEN_DOWN, 30, 14, 196, 84)
+    gui["CENTER_TXT"].draw(30, 18, 196, 25, game)
+    gui["CENTER_TXT"].draw(30, 39, 196, 20, chapter)
+    gui["CENTER_TXT"].draw(30, 64, 196, 20, "Load game?")
+    gui["OPT_BTN"].draw(23, 119, 92, 26, "Yes")
+    gui["OPT_BTN"].draw(140, 119, 92, 26, "No")
+    gui["OPT_CURSOR"].draw(cmd[optSelected].X1, cmd[optSelected].Y1, cmd[optSelected].X2 - cmd[optSelected].X1, cmd[optSelected].Y2 - cmd[optSelected].Y1)
+    gui["SCAN_LINES"].draw()
 end
 
 gui.update = function()
-	gui.draw()
-	
-	Controls.read()	
-	if Stylus.released and pointCollide( cmd[ "Yes" ], Stylus ) then
-		load__struct = loadAndDecryptFile("games/game.sav", {251, 662, 93, 44, 77})
-		hp = load__struct.hp
-		evidence = load__struct.evidence
-		profile = load__struct.profile
-		bookmark = load__struct.bookmark
-		load__struct = nil
-		gui.deconstruct()
-		gui.construct( "advance" )
-		goto( _G[ bookmark ]() )
-	elseif Stylus.released and pointCollide( cmd[ "No" ], Stylus ) then
-		gui.deconstruct()
-		gui.construct( "main" )
-	elseif Keys.newPress.Right then
-		optSelected = 2
-	elseif Keys.newPress.Left and optSelected > 1 then
-		optSelected = 1
-	elseif Keys.newPress.A then
-		if optSelected == 1 then
-			gui.deconstruct()
-			gui.construct( "advance" )
-			goto( _G[ bookmark ]() )
-		elseif optSelected == 2 then
-			gui.deconstruct()
-			gui.construct( "main" )
-		end
-	end
+    gui.draw()
+    
+    Controls.read()    
+    if Stylus.released and pointCollide(cmd["Yes"], Stylus) then
+        load__struct = loadAndDecryptFile("games/game.sav", {251, 662, 93, 44, 77})
+        hp = load__struct.hp
+        evidence = load__struct.evidence
+        profile = load__struct.profile
+        bookmark = load__struct.bookmark
+        load__struct = nil
+        gui.deconstruct()
+        gui.construct("advance")
+        goto(_G[bookmark]())
+    elseif Stylus.released and pointCollide(cmd["No"], Stylus) then
+        gui.deconstruct()
+        gui.construct("main")
+    elseif Keys.newPress.Right then
+        optSelected = 2
+    elseif Keys.newPress.Left and optSelected > 1 then
+        optSelected = 1
+    elseif Keys.newPress.A then
+        if optSelected == 1 then
+            gui.deconstruct()
+            gui.construct("advance")
+            goto(_G[bookmark]())
+        elseif optSelected == 2 then
+            gui.deconstruct()
+            gui.construct("main")
+        end
+    end
 
-	if not clicking then render() end
+    if not clicking then render() end
 end

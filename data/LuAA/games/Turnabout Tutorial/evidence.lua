@@ -22,111 +22,111 @@
 ]]
 
 attorneybadge = {
-	name = "Attorney Badge",
-	pic = "evidence/lawyer badge.gif",
-	info = {
-		"Type: Other",
-		"One of my possessions."
-	},
-	desc = {
-		"It's my all-important badge.",
-		"It shows that I am a",
-		"defense attorney."
-	},
-	category = EVIDENCE
+    name = "Attorney Badge",
+    pic = "evidence/lawyer badge.gif",
+    info = {
+        "Type: Other",
+        "One of my possessions."
+    },
+    desc = {
+        "It's my all-important badge.",
+        "It shows that I am a",
+        "defense attorney."
+    },
+    category = EVIDENCE
 }
 
 cellphone = {
-	name = "Cell Phone",
-	pic = "evidence/phoenix phone.gif",
-	info = {
-		"Type: Other",
-		"One of my possessions."
-	},
-	desc = {
-		"My trusty cell phone.",
-		"Can't leave home without this.",
-	},
-	category = EVIDENCE
+    name = "Cell Phone",
+    pic = "evidence/phoenix phone.gif",
+    info = {
+        "Type: Other",
+        "One of my possessions."
+    },
+    desc = {
+        "My trusty cell phone.",
+        "Can't leave home without this.",
+    },
+    category = EVIDENCE
 }
 
 bullet = {
-	name = "Bullet",
-	pic = "evidence/bullet baggie.gif",
-	info = {
-		"Type: Weapons",
-		"Submitted as evidence",
-		"by Detective Gumshoe."
-	},
-	desc = {
-		"8 mm bullet found in",
-		"victim's body."
-	},
-	category = EVIDENCE
+    name = "Bullet",
+    pic = "evidence/bullet baggie.gif",
+    info = {
+        "Type: Weapons",
+        "Submitted as evidence",
+        "by Detective Gumshoe."
+    },
+    desc = {
+        "8 mm bullet found in",
+        "victim's body."
+    },
+    category = EVIDENCE
 }
 
 pistol = {
-	name = "Pistol",
-	pic = "evidence/pistol.gif",
-	info = {
-		"Type: Weapons",
-		"Submitted as evidence",
-		"by Detective Gumshoe."
-	},
-	desc = {
-		"Shoots 8 mm bullets.",
-		"Was used to kill the victim,",
-		"Yak Uza."
-	},
-	category = EVIDENCE
+    name = "Pistol",
+    pic = "evidence/pistol.gif",
+    info = {
+        "Type: Weapons",
+        "Submitted as evidence",
+        "by Detective Gumshoe."
+    },
+    desc = {
+        "Shoots 8 mm bullets.",
+        "Was used to kill the victim,",
+        "Yak Uza."
+    },
+    category = EVIDENCE
 }
 
 soymilk = {
-	name = "VeetaSoy Soy Milk",
-	pic = "evidence/ev_case3_Milk_eng.gif",
-	info = {
-		"Type: Evidence",
-		"Submitted as evidence",
-		"by Detective Gumshoe."
-	},
-	desc = {
-		"Found at the crime scene.",
-		"Being expired, it's thick",
-		"like tofu."
-	},
-	category = EVIDENCE
+    name = "VeetaSoy Soy Milk",
+    pic = "evidence/ev_case3_Milk_eng.gif",
+    info = {
+        "Type: Evidence",
+        "Submitted as evidence",
+        "by Detective Gumshoe."
+    },
+    desc = {
+        "Found at the crime scene.",
+        "Being expired, it's thick",
+        "like tofu."
+    },
+    category = EVIDENCE
 }
 
 report = {
-	name = "Autopsy Report",
-	pic = "evidence/autopsy report.gif",
-	info = {
-		"Type: Reports",
-		"Submitted as evidence",
-		"by Detective Gumshoe."
-	},
-	desc = {
-		"Time of death: unknown.",
-		"Cause of death: Single",
-		"bullet to the heart."
-	},
-	category = EVIDENCE
+    name = "Autopsy Report",
+    pic = "evidence/autopsy report.gif",
+    info = {
+        "Type: Reports",
+        "Submitted as evidence",
+        "by Detective Gumshoe."
+    },
+    desc = {
+        "Time of death: unknown.",
+        "Cause of death: Single",
+        "bullet to the heart."
+    },
+    category = EVIDENCE
 }
 
 photo = {
-	name = "Security Photo",
-	pic = "evidence/photo.gif",
-	info = {
-		"Type: Photographs",
-		"Taken from the security",
-		"booth."
-	},
-	desc = {
-		"A photo depicting Furio",
-		"Tigre in front of the",
-		"Global Studios park."
-	},
-	category = EVIDENCE
+    name = "Security Photo",
+    pic = "evidence/photo.gif",
+    info = {
+        "Type: Photographs",
+        "Taken from the security",
+        "booth."
+    },
+    desc = {
+        "A photo depicting Furio",
+        "Tigre in front of the",
+        "Global Studios park."
+    },
+    category = EVIDENCE
 }
 
 ------------------------------------------------------------------------------
@@ -134,57 +134,57 @@ photo = {
 ------------------------------------------------------------------------------
 
 pr_phoenix = {
-	name = "Phoenix Wright",
-	pic = "profiles/phoenix.gif",
-	info = {
-		"Age : 24",
-		"Gender : Male",
-	},
-	desc = {
-		"Handsome, aren't I?"
-	},
-	category = PROFILES
+    name = "Phoenix Wright",
+    pic = "profiles/phoenix.gif",
+    info = {
+        "Age : 24",
+        "Gender : Male",
+    },
+    desc = {
+        "Handsome, aren't I?"
+    },
+    category = PROFILES
 }
 
 pr_gumshoe ={
-	name = "Dick Gumshoe",
-	pic = "profiles/gumshoe.gif",
-	info = {
-		"Age : 30",
-		"Gender : Male",
-	},
-	desc = {
-		"The detective in charge of",
-		"homicides down at the",
-		"precinct."
-	},
-	category = PROFILES
+    name = "Dick Gumshoe",
+    pic = "profiles/gumshoe.gif",
+    info = {
+        "Age : 30",
+        "Gender : Male",
+    },
+    desc = {
+        "The detective in charge of",
+        "homicides down at the",
+        "precinct."
+    },
+    category = PROFILES
 }
 
 pr_furio ={
-	name = "Furio Tigre",
-	pic = "profiles/zenitora.gif",
-	info = {
-		"Age : 40",
-		"Gender : Male",
-	},
-	desc = {
-		"Handsome, aren't I?"
-	},
-	category = PROFILES
+    name = "Furio Tigre",
+    pic = "profiles/zenitora.gif",
+    info = {
+        "Age : 40",
+        "Gender : Male",
+    },
+    desc = {
+        "Handsome, aren't I?"
+    },
+    category = PROFILES
 }
 
 pr_yakuza ={
-	name = "Yak Uza",
-	pic = "profiles/darke.gif",
-	info = {
-		"Age : 26",
-		"Gender : Male",
-	},
-	desc = {
-		"Victim in my murder case.",
-		"Was killed with a single bullet",
-		"to the chest."
-	},
-	category = PROFILES
+    name = "Yak Uza",
+    pic = "profiles/darke.gif",
+    info = {
+        "Age : 26",
+        "Gender : Male",
+    },
+    desc = {
+        "Victim in my murder case.",
+        "Was killed with a single bullet",
+        "to the chest."
+    },
+    category = PROFILES
 }

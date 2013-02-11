@@ -26,19 +26,19 @@ Debug.isDebugOn = false
 Debug.debugText = ""
 Debug.debugColor = Color.new(31, 31, 31)
 Debug.ON = function()
-	Debug.isDebugOn = true
+    Debug.isDebugOn = true
 end
 Debug.OFF = function()
-	Debug.isDebugOn = false
+    Debug.isDebugOn = false
 end
 Debug.print = function(text)
-	assert(text ~= nil, "Text can't be null")
-	Debug.debugText = Debug.debugText..text.."/n"
+    assert(text ~= nil, "Text can't be null")
+    Debug.debugText = Debug.debugText..text.."/n"
 end
 Debug.setColor = function(color)
-	assert(color ~= nil, "Color can't be null")
-	Debug.debugColor = color
+    assert(color ~= nil, "Color can't be null")
+    Debug.debugColor = color
 end
 Debug.clear = function()
-	Debug.debugText = ""
+    Debug.debugText = ""
 end

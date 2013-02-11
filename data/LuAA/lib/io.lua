@@ -21,11 +21,11 @@
                     You should have received a copy of the GNU General Public License along with LuAA. If not, see http://www.gnu.org/licenses/.
 ]]
 
-function io.fileExists( fname )
-	local statusfile, errfile
-	statusfile, errfile = pcall( function() -- check if file exists
-		f = io.open( fname )
-		io.close( f )
-	end)
-	return ( errfile == nil )
+function io.fileExists(fname)
+    local statusfile, errfile
+    statusfile, errfile = pcall(function() -- check if file exists
+        f = io.open(fname)
+        io.close(f)
+    end)
+    return (errfile == nil)
 end

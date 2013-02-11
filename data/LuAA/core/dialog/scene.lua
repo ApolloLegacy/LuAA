@@ -1,14 +1,14 @@
 --[[
                      _               ____ ____
                     | |             / _  |  _ \
-                    | |      __  __/ /_| | |_\ \ 
+                    | |      __  __/ /_| | |_\ \
                     | |     / / / /  __  |  __  \
-                    | |____/ /_/ /  /  | | |  \  \ 
+                    | |____/ /_/ /  /  | | |  \  \
                     |______\____/__/   |_|_|   \__\
-                    
+
     Name :          LuAA - scene.lua
                     Constructs dialog for loading the scene.
-    Purpose :        
+    Purpose :
                     LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed 1st in the Neoflash Spring Coding Competition 2009, originally named AceAttorneyDS (http://www.neoflash.com/forum/index.php?topic=5557.0), winning a $300 prize.
 
     Author :        Copyright 2009 Daniel Li (http://x711Li.com/)
@@ -25,67 +25,78 @@ bg = {}
 
 fg = {}
 
-function newbg( p, size )
-	bg.path = p
-	bg.size = 0
-	bg.x = 0
-	bg.y = 0
-	
-	if p then
-		bg.size = size
-		if bg.img then
-			Image.destroy( bg.img )
-		end
-		bg.img = Image.load( "art/bg/" .. p .. ".png", RAM )
-		bg.map = Map.new( bg.img, "art/bg/" .. p .. ".map", bg.size / 8, bg.size / 8, 8, 8 )
-		Map.draw( SCREEN_UP, bg.map, 0, 0, 32, 24 )
-	elseif bg.img then Image.destroy( bg.img ) bg.img = nil
-	end
+function newbg(p, size)
+    bg.path = p
+    bg.size = 0
+    bg.x = 0
+    bg.y = 0
+
+    if p then
+        bg.size = size
+        if bg.img then
+            Image.destroy(bg.img)
+            bg.img = nil
+        end
+
+        bg.img = Image.load("art/bg/" .. p .. ".png", RAM)
+        bg.map = Map.new(bg.img, "art/bg/" .. p .. ".map", bg.size / 8, bg.size / 8, 8, 8)
+        Map.draw(SCREEN_UP, bg.map, 0, 0, 32, 24)
+    elseif bg.img then
+        Image.destroy(bg.img)
+        bg.img = nil
+    end
 end
 
-function newfg( p, size )
-	fg.path = p
-	fg.size = 0
-	fg.x = 0
-	fg.y = 0
-	
-	if p then
-		fg.size = size
-		if fg.img then Image.destroy( fg.img ) end
+function newfg(p, size)
+    fg.path = p
+    fg.size = 0
+    fg.x = 0
+    fg.y = 0
 
-		fg.img = Image.load( "art/fg/" .. p .. ".png", RAM )
-		fg.map = Map.new( fg.img, "art/fg/" .. p .. ".map", fg.size / 8, fg.size / 8, 8, 8 )
-		Map.draw( SCREEN_UP, fg.map, 0, 0, 32, 24 )
-	elseif fg.img then Image.destroy( fg.img ) fg.img = nil
-	end
+    if p then
+        fg.size = size
+        if fg.img then
+            Image.destroy(fg.img)
+            fg = nil
+        end
+
+        fg.img = Image.load("art/fg/" .. p .. ".png", RAM)
+        fg.map = Map.new(fg.img, "art/fg/" .. p .. ".map", fg.size / 8, fg.size / 8, 8, 8)
+        Map.draw(SCREEN_UP, fg.map, 0, 0, 32, 24)
+    elseif fg.img then
+        Image.destroy(fg.img)
+        fg.img = nil
+    end
 end
 
-function newchar( n, e, aa, ia, ta )
-	char.name = n
-	char.emotion = e
-	char.active = aa
-	char.idle = ia
-	char.transition = ta
+function newchar(n, e, aa, ia, ta)
+    char.name = n
+    char.emotion = e
+    char.active = aa
+    char.idle = ia
+    char.transition = ta
 
-	if n then char.construct( char.active )
-	elseif char.img then Image.destroy( char.img ) char.img = nil
-	end
+    if n then char.construct(char.active)
+    elseif char.img then
+        Image.destroy(char.img)
+        char.img = nil
+    end
 end
 
-function newemo( e )
-	char.emotion = e
-	char.construct( char.active )
+function newemo(e)
+    char.emotion = e
+    char.construct(char.active)
 end
 
-function newactive( a )
-	char.active = a
-	char.construct( char.active )
+function newactive(a)
+    char.active = a
+    char.construct(char.active)
 end
 
-function newidle( a )
-	char.idle = a
+function newidle(a)
+    char.idle = a
 end
 
-function newtransition( a )
-	char.transition = a
+function newtransition(a)
+    char.transition = a
 end

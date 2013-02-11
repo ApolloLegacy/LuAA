@@ -28,73 +28,73 @@ dynamic_pst = false
 pst = false
 
 function dynamicpresent()
-	dynamic_pst = true
-	pst = true
-	gui.deconstruct()
-	dofile( "shell/gui/courtrecord.lua" )
-	talking = false
-	while not talking do
-		gui.update()
-	end
+    dynamic_pst = true
+    pst = true
+    gui.deconstruct()
+    dofile("shell/gui/courtrecord.lua")
+    talking = false
+    while not talking do
+        gui.update()
+    end
 end
 
 function present()
-	dynamic_pst = false
-	pst = true
-	gui.deconstruct()
-	dofile( "shell/gui/courtrecord.lua" )
+    dynamic_pst = false
+    pst = true
+    gui.deconstruct()
+    dofile("shell/gui/courtrecord.lua")
 end
 
-function hasev( ev )
-	local found = false
+function hasev(ev)
+    local found = false
 
-	if ev.category == PROFILES then
-		for i,v in ipairs ( profile ) do
-			if v == ev then
-				found = true
-				return found
-			end
-		end
-	else
-		for i,v in ipairs ( evidence ) do
-			if v == ev then
-				found = true
-				return found
-			end
-		end
-	end
-	
-	return found
+    if ev.category == PROFILES then
+        for i,v in ipairs (profile) do
+            if v == ev then
+                found = true
+                return found
+            end
+        end
+    else
+        for i,v in ipairs (evidence) do
+            if v == ev then
+                found = true
+                return found
+            end
+        end
+    end
+    
+    return found
 end
 
-function addev ( ev )
-	if ev.category == PROFILES then
-		table.insert ( profile, ev )
-		return table.maxn( profile )
-	else
-		table.insert ( evidence, ev )
-		return table.maxn( evidence )
-	end
+function addev (ev)
+    if ev.category == PROFILES then
+        table.insert (profile, ev)
+        return table.maxn(profile)
+    else
+        table.insert (evidence, ev)
+        return table.maxn(evidence)
+    end
 end
 
-function subev ( ev )
-	local found = false
-	local category = nil
+function subev (ev)
+    local found = false
+    local category = nil
 
-	if ev.category == PROFILES then
-		category = profile
-	else
-		category = evidence
-	end
+    if ev.category == PROFILES then
+        category = profile
+    else
+        category = evidence
+    end
 
-	for i,v in ipairs ( category ) do
-		if found then
-			category[ i - 1 ] = v		
-		end
-		if v == ev then
-			category[ i ] = nil 
-			found = true
-		end
-	end
-	return found
+    for i,v in ipairs (category) do
+        if found then
+            category[i - 1] = v        
+        end
+        if v == ev then
+            category[i] = nil 
+            found = true
+        end
+    end
+    return found
 end

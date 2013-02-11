@@ -24,32 +24,32 @@
 ex = {}
 hotspot = {}
 
-function dynamicexamine( path, size )
-	dynamic = true
-	ex.path = path
-	ex.size = size
-	gui.deconstruct()
-	dofile( "shell/gui/examine.lua" )
-	talking = false
-	while not talking do
-		gui.update()
-	end
+function dynamicexamine(path, size)
+    dynamic = true
+    ex.path = path
+    ex.size = size
+    gui.deconstruct()
+    dofile("shell/gui/examine.lua")
+    talking = false
+    while not talking do
+        gui.update()
+    end
 end
 
 function examine()
-	dynamic = false
-	gui.deconstruct()
-	dofile( "shell/gui/examine.lua" )
+    dynamic = false
+    gui.deconstruct()
+    dofile("shell/gui/examine.lua")
 end
 
-function newhotspot( x, y, w, h, obj )
-	local hs = {
-		X1 = x,
-		Y1 = y,
-		X2 = x + w,
-		Y2 = y + h,
-		object = obj
-	}
-	table.insert( hotspot, hs )
-	return table.maxn( hotspot )
+function newhotspot(x, y, w, h, obj)
+    local hs = {
+        X1 = x,
+        Y1 = y,
+        X2 = x + w,
+        Y2 = y + h,
+        object = obj
+    }
+    table.insert(hotspot, hs)
+    return table.maxn(hotspot)
 end

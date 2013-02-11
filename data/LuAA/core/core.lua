@@ -21,32 +21,32 @@
                     You should have received a copy of the GNU General Public License along with LuAA. If not, see http://www.gnu.org/licenses/.
 ]]
 
-dofile( "core/const.lua" )
+dofile("core/const.lua")
 
-dofile( "core/dialog/advance.lua" )
-dofile( "core/dialog/animation.lua" )
-dofile( "core/dialog/character.lua" )
-dofile( "core/dialog/courtrecord.lua" )
-dofile( "core/dialog/examine.lua" )
-dofile( "core/dialog/interaction.lua" )
-dofile( "core/dialog/gui.lua" )
-dofile( "core/dialog/options.lua" )
-dofile( "core/dialog/save.lua" )
-dofile( "core/dialog/scene.lua" )
-dofile( "core/dialog/script.lua" )
-dofile( "core/dialog/sound.lua" )
-dofile( "core/dialog/testimony.lua" )
+dofile("core/dialog/advance.lua")
+dofile("core/dialog/animation.lua")
+dofile("core/dialog/character.lua")
+dofile("core/dialog/courtrecord.lua")
+dofile("core/dialog/examine.lua")
+dofile("core/dialog/interaction.lua")
+dofile("core/dialog/gui.lua")
+dofile("core/dialog/options.lua")
+dofile("core/dialog/save.lua")
+dofile("core/dialog/scene.lua")
+dofile("core/dialog/script.lua")
+dofile("core/dialog/sound.lua")
+dofile("core/dialog/testimony.lua")
 
-dofile( "games/cases.lua" )
+dofile("games/cases.lua")
 
-dofile( "shell/shell.lua" )
-dofile( "shell/gui.lua" )
+dofile("shell/shell.lua")
+dofile("shell/gui.lua")
 
-microlua = Image.load( "art/etc/ml.png", RAM )
-x711Li = Image.load( "art/etc/x711Li.png", RAM )
-font = Font.load( "fonts/pw_international.oft" )
-namefont = Font.load( "fonts/pw_name.oft" )
-arial = Font.load( "fonts/arial.oft" )
+microlua = Image.load("art/etc/ml.png", RAM)
+x711Li = Image.load("art/etc/x711Li.png", RAM)
+font = Font.load("fonts/pw_international.oft")
+namefont = Font.load("fonts/pw_name.oft")
+arial = Font.load("fonts/arial.oft")
 
 --  Construct script variables/functions
 
@@ -58,21 +58,21 @@ tmr = Timer.new()
 tmr:start()
 
 while tmr:time() < 1 do
-	screen.blit( SCREEN_UP, 0, 0, microlua )
-	screen.blit( SCREEN_DOWN, 0, 0, x711Li )
-	render()
+    screen.blit(SCREEN_UP, 0, 0, microlua)
+    screen.blit(SCREEN_DOWN, 0, 0, x711Li)
+    render()
 end
 
 --  Deconstruct LuAA/core  - > load main menu
 
-Image.destroy( microlua )
+Image.destroy(microlua)
 microlua = nil
-Image.destroy( x711Li )
+Image.destroy(x711Li)
 b12core = nil
 tmr = nil
 
-gui.construct( "main" )
+gui.construct("main")
 
 while true do
-	gui.update()
+    gui.update()
 end

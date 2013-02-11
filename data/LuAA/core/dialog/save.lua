@@ -21,10 +21,10 @@
                     You should have received a copy of the GNU General Public License along with LuAA. If not, see http://www.gnu.org/licenses/.
 ]]
 
-function goto_save( g, c, bm )
-	game = g
-	chapter = c
-	bookmark = bm
-	gui.deconstruct()
-	dofile( "shell/gui/save.lua" )
+function goto_save(g, c, bm)
+    game = g
+    chapter = c
+    bookmark = bm
+    gui.deconstruct()
+    dofile("shell/gui/save.lua")
 end

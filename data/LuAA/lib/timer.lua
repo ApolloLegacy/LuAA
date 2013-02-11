@@ -22,53 +22,53 @@
 ]]
 
 Timer = {
-	new = function()
-		local t = os.time()
-		local isStarted = false
-		local tick = 0
-	
-		local time = function(self)
-			if isStarted then return os.time() - t
-			else return tick end
-		end
-	
-		local stop = function(self)
-			if isStarted then
-				isStarted = false
-				tick = os.time() - t
-			end
-		end
-		
-		local start = function(self)
-			if not isStarted then
-				isStarted = true
-				t = os.time() - tick 	
-			end
-		end
-		
-		local reset = function(self)
-			t = os.time()
-			isStarted = false
-			tick = 0				
-		end
-	
-		return{
-			time = time,
-			stop = stop,
-			start = start,
-			reset = reset
-		}
-	end,
-	wait = function( seconds )
-		local t = Timer.new()
-		t:start()
-		while t:time() < seconds * 1000 do
-		end
-	end,
-	pause = function( milliseconds )
-		local t = Timer.new()
-		t:start()
-		while t:time() < milliseconds do
-		end
-	end
+    new = function()
+        local t = os.time()
+        local isStarted = false
+        local tick = 0
+    
+        local time = function(self)
+            if isStarted then return os.time() - t
+            else return tick end
+        end
+    
+        local stop = function(self)
+            if isStarted then
+                isStarted = false
+                tick = os.time() - t
+            end
+        end
+        
+        local start = function(self)
+            if not isStarted then
+                isStarted = true
+                t = os.time() - tick     
+            end
+        end
+        
+        local reset = function(self)
+            t = os.time()
+            isStarted = false
+            tick = 0                
+        end
+    
+        return{
+            time = time,
+            stop = stop,
+            start = start,
+            reset = reset
+        }
+    end,
+    wait = function(seconds)
+        local t = Timer.new()
+        t:start()
+        while t:time() < seconds * 1000 do
+        end
+    end,
+    pause = function(milliseconds)
+        local t = Timer.new()
+        t:start()
+        while t:time() < milliseconds do
+        end
+    end
 }

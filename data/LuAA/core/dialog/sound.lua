@@ -27,36 +27,36 @@ speaker.sound = nil
 Sound.setModVolume(600)
 Sound.bgm = nil
 
-function newbgm( bgm )
-	if Sound.bgm then Sound.unloadMod( Sound.bgm ) end
-	Sound.bgm = bgm
-	Sound.loadMod( bgm )
-	Sound.startMod( bgm, PLAY_LOOP)
+function newbgm(bgm)
+    if Sound.bgm then Sound.unloadMod(Sound.bgm) end
+    Sound.bgm = bgm
+    Sound.loadMod(bgm)
+    Sound.startMod(bgm, PLAY_LOOP)
 end
 
-function playsfx( sfx )
-	Sound.loadSFX( sfx )
-	Sound.startSFX( sfx )
-	Sound.unloadSFX( sfx )
+function playsfx(sfx)
+    Sound.loadSFX(sfx)
+    Sound.startSFX(sfx)
+    Sound.unloadSFX(sfx)
 end
 
-function isVowel( char )
-	f_char = char:gsub( "[AEIOUYaeiouy]", "IS_A_VOWEL" )
-	if f_char == "IS_A_VOWEL" then return true end
+function isVowel(char)
+    f_char = char:gsub("[AEIOUYaeiouy]", "IS_A_VOWEL")
+    if f_char == "IS_A_VOWEL" then return true end
 end
 
-function isSpoken( v, c )
-	if type( tonumber( v ) ) == "number" or
-	( isVowel( v ) and not isVowel( c ) ) then
-		return true
-	end
+function isSpoken(v, c)
+    if type(tonumber(v)) == "number" or
+    (isVowel(v) and not isVowel(c)) then
+        return true
+    end
 end
 
-function newspeaker( n, s )
-	speaker.name = n
-	if s then
-		if speaker.sound then Sound.unloadSFX( speaker.sound ) end
-		speaker.sound = s
-		Sound.loadSFX( s )
-	end
+function newspeaker(n, s)
+    speaker.name = n
+    if s then
+        if speaker.sound then Sound.unloadSFX(speaker.sound) end
+        speaker.sound = s
+        Sound.loadSFX(s)
+    end
 end

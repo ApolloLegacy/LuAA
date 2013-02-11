@@ -1,14 +1,14 @@
 --[[
                      _               ____ ____
                     | |             / _  |  _ \
-                    | |      __  __/ /_| | |_\ \ 
+                    | |      __  __/ /_| | |_\ \
                     | |     / / / /  __  |  __  \
-                    | |____/ /_/ /  /  | | |  \  \ 
+                    | |____/ /_/ /  /  | | |  \  \
                     |______\____/__/   |_|_|   \__\
-                    
+
     Name :          LuAA - datetime.lua
                     Datetime library.
-    Purpose :        
+    Purpose :
                     LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed 1st in the Neoflash Spring Coding Competition 2009, originally named AceAttorneyDS (http://www.neoflash.com/forum/index.php?topic=5557.0), winning a $300 prize.
 
     Author :        Copyright 2009 Daniel Li (http://x711Li.com/)
@@ -24,17 +24,17 @@
 DateTime = {}
 
 DateTime.new = function()
-	local year, month, day, hour, minute, second
-	return {year = year, month = month, day = day, hour = hour, minute = minute, second = second}
+    local year, month, day, hour, minute, second
+    return {year = year, month = month, day = day, hour = hour, minute = minute, second = second}
 end
 
 DateTime.getCurrentTime = function()
-	local dt = DateTime.new()
-	dt.year = ds_system.getCurrentTime(0)
-	dt.month = ds_system.getCurrentTime(1)
-	dt.day = ds_system.getCurrentTime(2)
-	dt.hour = ds_system.getCurrentTime(3)
-	dt.minute = ds_system.getCurrentTime(4)
-	dt.second = ds_system.getCurrentTime(5)
-	return dt
+    local dt = DateTime.new()
+    dt.year = System.getCurrentTime(0)
+    dt.month = System.getCurrentTime(1)
+    dt.day = System.getCurrentTime(2)
+    dt.hour = System.getCurrentTime(3)
+    dt.minute = System.getCurrentTime(4)
+    dt.second = System.getCurrentTime(5)
+    return dt
 end

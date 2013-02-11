@@ -21,9 +21,9 @@
                     You should have received a copy of the GNU General Public License along with LuAA. If not, see http://www.gnu.org/licenses/.
 ]]
 
-function tocolor ( aColor )
-	local red = aColor:sub ( 1, 2 )
-	local green = aColor:sub ( 3, 4 )
-	local blue = aColor:sub ( 5, 6 )
-	return Color.new ( tonumber ( "0x"..red ) / 8.25, tonumber ( "0x"..green ) / 8.25, tonumber ( "0x"..blue ) / 8.25 )
+function tocolor (aColor)
+    local red = aColor:sub (1, 2)
+    local green = aColor:sub (3, 4)
+    local blue = aColor:sub (5, 6)
+    return Color.new (tonumber ("0x"..red) / 8.25, tonumber ("0x"..green) / 8.25, tonumber ("0x"..blue) / 8.25)
 end

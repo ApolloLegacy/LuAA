@@ -25,59 +25,59 @@ gui_ = {}
 
 cmd = {}
 
-gui.saved[ 1 ] = "testimony"
-gui.saved[ 2 ] = "testimony"
+gui.saved[1] = "testimony"
+gui.saved[2] = "testimony"
 
 if DYNAMIC_GUI == false then
-	btn = {}
-	gui.loadBtn( "Press" )
-	gui.loadBtn( "Present" )
+    btn = {}
+    gui.loadBtn("Press")
+    gui.loadBtn("Present")
 end
 
 function gui.deconstruct()
-	cmd = nil
-	if DYNAMIC_GUI == false then
-		Image.destroy( btn["Press"] )
-		btn["Press"] = nil
-		Image.destroy( btn["Present"] )
-		btn["Present"] = nil
-	end
+    cmd = nil
+    if DYNAMIC_GUI == false then
+        Image.destroy(btn["Press"])
+        btn["Press"] = nil
+        Image.destroy(btn["Present"])
+        btn["Present"] = nil
+    end
 end
 
 function gui.draw()
-	gui[ "BACKGROUND" ].draw()
-	gui[ "ADV_BTN" ].draw( 16, 64, 106, 80, "Back" )
-	gui[ "ADV_BTN" ].draw( 136, 64, 106, 80, "Next" )
-	gui[ "SCAN_LINES" ].draw()
-	gui[ "MENU_PANEL" ].draw()
-	gui[ "MENU_BTN" ].draw( 0, 0, 80, 32, "Press", 0, 0 )
-	gui[ "MENU_BTN" ].draw( 176, 0, 80, 32, "Present", 0, 1 )
-	gui[ "HP_BAR" ].draw()
+    gui["BACKGROUND"].draw()
+    gui["ADV_BTN"].draw(16, 64, 106, 80, "Back")
+    gui["ADV_BTN"].draw(136, 64, 106, 80, "Next")
+    gui["SCAN_LINES"].draw()
+    gui["MENU_PANEL"].draw()
+    gui["MENU_BTN"].draw(0, 0, 80, 32, "Press", 0, 0)
+    gui["MENU_BTN"].draw(176, 0, 80, 32, "Present", 0, 1)
+    gui["HP_BAR"].draw()
 end
 
 function gui.update()
-	shell.draw()
-	
-	Controls.read()
-	if ( ( Stylus.released and pointCollide( cmd[ "Back" ], Stylus ) ) or Keys.newPress.B or Keys.newPress.Left ) and tsm_line > 1 then
-		gui.click( "ADV_BTN", "Back" )
-		tsm_line = tsm_line - 1
-		talking = true	
-	elseif ( Stylus.released and pointCollide( cmd[ "Next" ], Stylus ) ) or Keys.newPress.A or Keys.newPress.Right then
-		gui.click( "ADV_BTN", "Next" )
-		tsm_line = tsm_line + 1
-		talking = true
-	elseif ( Stylus.released and pointCollide( cmd[ "Press" ], Stylus ) ) or Keys.newPress.L then
-		gui.click( "MENU_BTN", "Press", 0 )
-		gui.deconstruct()
-		gui.construct( "advance" )
-		goto( press[ tsm_line ] )
-	elseif ( Stylus.released and pointCollide( cmd[ "Present" ], Stylus ) ) or Keys.newPress.R then
-		gui.click( "MENU_BTN", "Present", 1 )
-		gui.deconstruct()
-		pst = true
-		gui.construct( "courtrecord" )
-	end
+    shell.draw()
+    
+    Controls.read()
+    if ((Stylus.released and pointCollide(cmd["Back"], Stylus)) or Keys.newPress.B or Keys.newPress.Left) and tsm_line > 1 then
+        gui.click("ADV_BTN", "Back")
+        tsm_line = tsm_line - 1
+        talking = true    
+    elseif (Stylus.released and pointCollide(cmd["Next"], Stylus)) or Keys.newPress.A or Keys.newPress.Right then
+        gui.click("ADV_BTN", "Next")
+        tsm_line = tsm_line + 1
+        talking = true
+    elseif (Stylus.released and pointCollide(cmd["Press"], Stylus)) or Keys.newPress.L then
+        gui.click("MENU_BTN", "Press", 0)
+        gui.deconstruct()
+        gui.construct("advance")
+        goto(press[tsm_line])
+    elseif (Stylus.released and pointCollide(cmd["Present"], Stylus)) or Keys.newPress.R then
+        gui.click("MENU_BTN", "Present", 1)
+        gui.deconstruct()
+        pst = true
+        gui.construct("courtrecord")
+    end
 
-	if not clicking then render() end
+    if not clicking then render() end
 end

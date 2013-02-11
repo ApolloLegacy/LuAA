@@ -22,23 +22,23 @@
 ]]
 
 textbox = {
-	x = 0,
-	y = 128,
-	w = 256,
-	h = 64,
-	message = nil
+    x = 0,
+    y = 128,
+    w = 256,
+    h = 64,
+    message = nil
 }
 
-function selectanswer( text )
-	local timer = 0
-	textbox.message = text
-	repeat
-		textbox.y = textbox.y - 2
-		shell.draw()
-		screen.drawFillRect( SCREEN_UP, 2, textbox.y + textbox.h + 2, 254, 192, PW_SIENNA )
-		gui[ "BORDER" ].draw( SCREEN_UP, 0, textbox.y + textbox.h, 256, 26 )
-		gui[ "BORDERED_TXT" ].draw( SCREEN_UP, 128 - ( Font.getStringWidth( font, textbox.message ) / 2 ), textbox.y + textbox.h + 2, textbox.message, 0, gui[ "MENU_BTN" ].color[ "BORDER" ], gui[ "MENU_BTN" ].color[ "SEL_BORDER" ], font )
-		render()
-		timer = timer + 1
-	until timer == 12
+function selectanswer(text)
+    local timer = 0
+    textbox.message = text
+    repeat
+        textbox.y = textbox.y - 2
+        shell.draw()
+        screen.drawFillRect(SCREEN_UP, 2, textbox.y + textbox.h + 2, 254, 192, PW_SIENNA)
+        gui["BORDER"].draw(SCREEN_UP, 0, textbox.y + textbox.h, 256, 26)
+        gui["BORDERED_TXT"].draw(SCREEN_UP, 128 - (Font.getStringWidth(font, textbox.message) / 2), textbox.y + textbox.h + 2, textbox.message, 0, gui["MENU_BTN"].color["BORDER"], gui["MENU_BTN"].color["SEL_BORDER"], font)
+        render()
+        timer = timer + 1
+    until timer == 12
 end

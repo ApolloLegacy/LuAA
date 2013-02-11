@@ -24,13 +24,13 @@
 interrogation = false
 
 function interaction()
-	interrogation = false
-	gui.deconstruct()
-	dofile( "shell/gui/interaction.lua" )
+    interrogation = false
+    gui.deconstruct()
+    dofile("shell/gui/interaction.lua")
 end
 
 function interrogation()
-	interrogation = true
-	gui.deconstruct()
-	dofile( "shell/gui/interaction.lua" )
+    interrogation = true
+    gui.deconstruct()
+    dofile("shell/gui/interaction.lua")
 end

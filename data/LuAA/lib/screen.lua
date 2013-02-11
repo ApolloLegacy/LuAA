@@ -26,32 +26,32 @@ screen.setSpaceBetweenScreens(10)
 mustCountFPS = true
 
 startDrawing = function()
-	screen.startDrawing2D()
+    screen.startDrawing2D()
 end
 
 stopDrawing = function()
-	-- Count FPS
-	if mustCountFPS then 
-		NB_FPS_COUNTER = NB_FPS_COUNTER + 1
-		mustCountFPS = false
-	else
-		mustCountFPS = true
-	end
-	if tmrFpsCounter:time() >= 1000 then
-		NB_FPS = NB_FPS_COUNTER
-		NB_FPS_COUNTER = 0
-		tmrFpsCounter:reset()
-		tmrFpsCounter:start()
-	end
-	-- Draw debug console
-	if Debug.isDebugOn then
-		screen.drawTextBox(SCREEN_DOWN, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, Debug.debugText, Debug.debugColor)
-	end
-	screen.endDrawing()
-	screen.waitForVBL()		
+    -- Count FPS
+    if mustCountFPS then 
+        NB_FPS_COUNTER = NB_FPS_COUNTER + 1
+        mustCountFPS = false
+    else
+        mustCountFPS = true
+    end
+    if tmrFpsCounter:time() >= 1000 then
+        NB_FPS = NB_FPS_COUNTER
+        NB_FPS_COUNTER = 0
+        tmrFpsCounter:reset()
+        tmrFpsCounter:start()
+    end
+    -- Draw debug console
+    if Debug.isDebugOn then
+        screen.drawTextBox(SCREEN_DOWN, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, Debug.debugText, Debug.debugColor)
+    end
+    screen.endDrawing()
+    screen.waitForVBL()        
 end
 
 render = function()
-	stopDrawing()
-	startDrawing()
+    stopDrawing()
+    startDrawing()
 end
