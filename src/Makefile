@@ -7,9 +7,6 @@
 .SUFFIXES:
 #---------------------------------------------------------------------------------
 
-DEVKITPRO = /home/x711li/Workspace/devkitpro
-DEVKITARM = $(DEVKITPRO)/devkitARM
-
 ARM7BIN := -7 $(DEVKITPRO)/default.elf
 
 ifeq ($(strip $(DEVKITARM)),)
