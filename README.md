@@ -8,7 +8,12 @@ LuAA
     <img src="http://i51.tinypic.com/169g9af.png">
 </p>
 
-LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed 1st in the Neoflash Spring Coding Competition 2009, originally named AceAttorneyDS (http://www.neoflash....hp?topic=5557.0), winning a $300 prize.
+LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed <a href="http://www.neoflash.com/forum/index.php/topic,5608.0.html">1st in the Neoflash Spring Coding Competition 2009</a>, originally named AceAttorneyDS, winning a $300 prize.
+
+Background Information
+---------------------------------------------------------------------------------------------------------
+
+Coming soon.
 
 Usage
 ---------------------------------------------------------------------------------------------------------
