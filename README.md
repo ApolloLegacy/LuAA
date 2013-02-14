@@ -8,14 +8,9 @@ LuAA
     <img src="http://i51.tinypic.com/169g9af.png">
 </p>
 
-LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool -> Pack to compile a .nds file). LuAA placed <a href="http://www.neoflash.com/forum/index.php/topic,5608.0.html">1st in the Neoflash Spring Coding Competition 2009</a>, originally named AceAttorneyDS, winning a $300 prize.
+LuAA is a mobile visual novel application programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool). LuAA placed <a href="http://www.neoflash.com/forum/index.php/topic,5608.0.html">1st in the Neoflash Spring Coding Competition 2009</a>, originally named AceAttorneyDS, winning a $300 prize.
 
 Background Information
----------------------------------------------------------------------------------------------------------
-
-Coming soon.
-
-Usage
 ---------------------------------------------------------------------------------------------------------
 
 Coming soon.
@@ -25,7 +20,18 @@ Compilation
 
 Please follow the README found in the <a href="https://github.com/microlua/source">MicroLua source repository</a>.
 
-Discussion Thread
+Discussion Threads
 ---------------------------------------------------------------------------------------------------------
 
-All discussion regarding LuAA may be found in its respective <a href="http://microlua.xooit.fr/t837-LuAA-Ace-Attorney-Casemaker.htm">thread on the MicroLua forums</a>.
+- All discussion regarding LuAA may be found in its respective <a href="http://microlua.xooit.fr/t837-LuAA-Ace-Attorney-Casemaker.htm">thread</a>.
+- All discussion regarding the embedded file system implementation may be found in its respective <a href="http://microlua.xooit.fr/t1046-EFSLib-with-MicroLua-4-6-1.htm">thread</a>.
+
+Usage
+---------------------------------------------------------------------------------------------------------
+
+### Coming
+-----
+
+Soon.
+
+-----
