@@ -35,8 +35,11 @@ LuAA was developed for several reasons:
 From Wikipedia:
 
 **Memory capacity**: 4 MB RAM
+
 **Top Screen**: A backlit, 3.12-inch, transmissive TFT color LCD with 256x192-pixel resolution and .24mm dot pitch, capable of displaying a total of 262,144 colors.
+
 **Touch Screen**: Same specifications as top screen, but with a transparent analog touch screen.
+
 **CPUs**: Two ARM processors, an ARM946E-S main CPU and ARM7TDMI coprocessor at clock speeds of 67 MHz and 33 MHz respectively.
 
 An amazing diagram that illustrates the hardware architecture well is one of devkitPro's:
