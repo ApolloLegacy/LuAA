@@ -379,3 +379,151 @@ None.
 examine()
 ~~~
 -----
+
+### newhotspot()
+-----
+_**Description**_: Adds a new hotspot to an object.
+
+##### *Parameters*
+x - x value of the rectangle
+y - y value of the rectangle
+w - width of the rectangle
+h - height of the rectangle
+obj - the object to bind the hotspot to
+
+##### *Return value*
+Returns the amount of hotspots in the objection.
+
+##### *Example*
+~~~
+newhotspot(0, 0, 256, 192, examined_map)
+~~~
+-----
+
+### selectanswer()
+-----
+_**Description**_: Selects the answer within the option dialog.
+
+##### *Parameters*
+text - The text assigned to the original answer.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+selectanswer("Why?")
+~~~
+-----
+
+### interaction()
+-----
+_**Description**_: Prompts the Interaction dialog (Move, Examine).
+
+##### *Parameters*
+None.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+interaction()
+~~~
+-----
+
+### interrogation()
+-----
+_**Description**_: Prompts the Interrogation dialog (Move, Examine, Present, Talk).
+
+##### *Parameters*
+None.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+interrogation()
+~~~
+-----
+
+### move()
+-----
+_**Description**_: Prompts the Move dialog.
+
+##### *Parameters*
+None.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+move()
+~~~
+-----
+
+### talk()
+-----
+_**Description**_: Prompts the Talk dialog.
+
+##### *Parameters*
+None.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+talk()
+~~~
+-----
+
+### dynamicoptions()
+-----
+_**Description**_: Forcefully prompts the Options dialog.
+
+##### *Parameters*
+… - Takes a list of parameters, each denoting the text 
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+dynamicoptions("What?", "Why?", "Who?")
+~~~
+-----
+
+### hasopt(opt)
+-----
+_**Description**_: Does the options dialog have the option?
+
+##### *Parameters*
+opt - The option value.
+
+##### *Return value*
+Returns whether or not the option is fine.
+
+##### *Example*
+~~~
+hasopt("Who?")
+~~~
+-----
+
+### newopt()
+-----
+_**Description**_: Adds a new option to the option dialog.
+
+##### *Parameters*
+None.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newopt()
+~~~
+-----
