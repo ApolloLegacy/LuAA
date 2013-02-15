@@ -98,6 +98,7 @@ advance()
 ~~~
 -----
 
+
 ### yell(words)
 -----
 _**Description**_: Plays the Objection!, Gotcha! and Hold It! animations.
@@ -115,6 +116,7 @@ yell('gotcha')
 ~~~
 -----
 
+
 ### alpha_inout(words)
 -----
 _**Description**_: Fades an animation into the screen, then exits, fading out.
@@ -130,6 +132,7 @@ None.
 alpha_inout('holdit')
 ~~~
 -----
+
 
 ### gavel()
 -----
@@ -147,6 +150,7 @@ gavel()
 ~~~
 -----
 
+
 ### jury()
 -----
 _**Description**_: Plays the jury animation.
@@ -163,6 +167,7 @@ jury()
 ~~~
 -----
 
+
 ### crossexanimation()
 -----
 _**Description**_: Plays the Cross Examination animation.
@@ -178,6 +183,7 @@ None.
 crossexanimation()
 ~~~
 -----
+
 
 ### fade_in(screen_id, spd)
 -----
@@ -196,6 +202,7 @@ fade_in(SCREEN_DOWN, 56)
 ~~~
 -----
 
+
 ### fade_out(screen_id, spd)
 -----
 _**Description**_: Fades out of the top screen, given it's id.
@@ -212,6 +219,7 @@ None.
 fade_out(SCREEN_UP, 4)
 ~~~
 -----
+
 
 ### alpha_in(screen_id, spd, img, size)
 -----
@@ -232,6 +240,7 @@ alpha_in(SCREEN_UP, 1, "art/char/Gumshoe/thinking(talk)", 1536)
 ~~~
 -----
 
+
 ### alpha_out(screen_id, spd, img, size)
 -----
 _**Description**_: Introduces an image to the screen, fading it out via an alpha animation.
@@ -251,6 +260,7 @@ alpha_out(SCREEN_UP, 1, "art/char/Gumshoe/thinking(talk)", 1536)
 ~~~
 -----
 
+
 ### unlock_successful()
 -----
 _**Description**_: Shows the Unlock Successful animation.
@@ -266,6 +276,7 @@ None.
 unlock_successful()
 ~~~
 -----
+
 
 ### dynamicpresent()
 -----
@@ -283,6 +294,7 @@ dynamicpresent()
 ~~~
 -----
 
+
 ### present()
 -----
 _**Description**_: Moves the player to the Present dialog.
@@ -298,6 +310,7 @@ None.
 present()
 ~~~
 -----
+
 
 ### hasev(ev)
 -----
@@ -315,6 +328,7 @@ hasev(attorneybadge)
 ~~~
 -----
 
+
 ### addev(ev)
 -----
 _**Description**_: Given an evidence ID, addev adds the evidence item to the Court Record.
@@ -331,6 +345,7 @@ addev(pr_phoenix)
 ~~~
 -----
 
+
 ### subev(ev)
 -----
 _**Description**_: Given an evidence ID, subev removes the evidence item from the Court Record.
@@ -346,6 +361,7 @@ Returns whether or not the evidence was found in the Court Record.
 subev(attorneybadge)
 ~~~
 -----
+
 
 ### dynamicexamine(path, size)
 -----
@@ -364,6 +380,7 @@ dynamicexamine("movie/bang", 256)
 ~~~
 -----
 
+
 ### examine()
 -----
 _**Description**_: Moves player to the Examine dialog.
@@ -379,6 +396,7 @@ None.
 examine()
 ~~~
 -----
+
 
 ### newhotspot()
 -----
@@ -396,9 +414,10 @@ Returns the amount of hotspots in the objection.
 
 ##### *Example*
 ~~~
-newhotspot(0, 0, 256, 192, examined_map)
+newhotspot(0, 0, 256, 192, "examined_map")
 ~~~
 -----
+
 
 ### selectanswer()
 -----
@@ -416,6 +435,7 @@ selectanswer("Why?")
 ~~~
 -----
 
+
 ### interaction()
 -----
 _**Description**_: Prompts the Interaction dialog (Move, Examine).
@@ -431,6 +451,7 @@ None.
 interaction()
 ~~~
 -----
+
 
 ### interrogation()
 -----
@@ -448,6 +469,7 @@ interrogation()
 ~~~
 -----
 
+
 ### move()
 -----
 _**Description**_: Prompts the Move dialog.
@@ -463,6 +485,7 @@ None.
 move()
 ~~~
 -----
+
 
 ### talk()
 -----
@@ -480,12 +503,13 @@ talk()
 ~~~
 -----
 
+
 ### dynamicoptions()
 -----
 _**Description**_: Forcefully prompts the Options dialog.
 
 ##### *Parameters*
-… - Takes a list of parameters, each denoting the text 
+… - Takes a list of parameters, each denoting the text for each option
 
 ##### *Return value*
 None.
@@ -495,6 +519,7 @@ None.
 dynamicoptions("What?", "Why?", "Who?")
 ~~~
 -----
+
 
 ### hasopt(opt)
 -----
@@ -512,9 +537,10 @@ hasopt("Who?")
 ~~~
 -----
 
+
 ### newopt()
 -----
-_**Description**_: Adds a new option to the option dialog.
+_**Description**_: Adds a new option to the Option dialog.
 
 ##### *Parameters*
 None.
@@ -525,5 +551,495 @@ None.
 ##### *Example*
 ~~~
 newopt()
+~~~
+-----
+
+
+### newmovopt(...)
+-----
+_**Description**_: Adds a new move option to the Move dialog.
+
+##### *Parameters*
+... - Takes a list of parameters, each denoting the text for each option
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newmovopt("Toronto")
+~~~
+-----
+
+
+### addtlk(opt)
+-----
+_**Description**_: Adds a new talk option to the Talk dialog.
+
+##### *Parameters*
+opt - The talk option text
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+addtlk("What?")
+~~~
+-----
+
+
+### newtlk(opt)
+-----
+_**Description**_: Adds a new talk option to the Talk dialog.
+
+##### *Parameters*
+opt - The talk option text
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+addtlk("What?")
+~~~
+-----
+
+
+### newmov(opt)
+-----
+_**Description**_: Adds a new talk option to the Talk dialog.
+
+##### *Parameters*
+opt - The talk option text
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+addtlk("What?")
+~~~
+-----
+
+
+### goto_save(g, c, bm)
+-----
+_**Description**_: Forcefully prompts player to Save dialog.
+
+##### *Parameters*
+g - Game ID
+c - Chapter ID
+bm - Bookmark ID
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+goto_save(4, 3, 2)
+~~~
+-----
+
+
+### newbg(p, size)
+-----
+_**Description**_: Creates a new background.
+
+##### *Parameters*
+p - Path to the background image
+size - Size of the background image's tilemap
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newbg("movie/alarm", 256)
+~~~
+-----
+
+
+### newfg(p, size)
+-----
+_**Description**_: Creates a new foreground.
+
+##### *Parameters*
+p - Path to the foreground image
+size - Size of the foreground image's tilemap
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newfg("movie/bang", 256)
+~~~
+-----
+
+
+### newchar(n, e, aa, ia, ta)
+-----
+_**Description**_: Create a new character.
+
+##### *Parameters*
+n - The name of the character
+e - The default emotion the character conveys
+aa - The default active animation
+ia - The default idle animation
+ta - The default transition animation
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newchar("Gumshoe", "thinking", "talk", "blink")
+~~~
+-----
+
+
+### newemo(e)
+-----
+_**Description**_: Prompts a new emotion for the character.
+
+##### *Parameters*
+e - Emotion ID
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newemo("disheartened")
+~~~
+-----
+
+
+### newactive(a)
+-----
+_**Description**_: Prompts a new active animation for the character.
+
+##### *Parameters*
+a - Active animation ID
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newactive("thinking")
+~~~
+-----
+
+
+### newidle(a)
+-----
+_**Description**_: Prompts a new idle animation for the character.
+
+##### *Parameters*
+a - Idle animation ID
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newidle("disheartened")
+~~~
+-----
+
+
+### newtransition(a)
+-----
+_**Description**_: Prompts a new transition animation for the character.
+
+##### *Parameters*
+a - Transition animation ID
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newtransition("blink")
+~~~
+-----
+
+
+### msg(text)
+-----
+_**Description**_: Shows text on the screen.
+
+##### *Parameters*
+text - The text value of the character text
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+msg("Hey, how's it going?")
+~~~
+-----
+
+
+### flash(c)
+-----
+_**Description**_: Shows a flash on the screen.
+
+##### *Parameters*
+c - The hex color code of the flash
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+flash("#FF0000")
+~~~
+-----
+
+
+### flash(c)
+-----
+_**Description**_: Shows a flash on the screen.
+
+##### *Parameters*
+c - The hex color code of the flash
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+flash("#FF0000")
+~~~
+-----
+
+
+### showshake(l, o)
+-----
+_**Description**_: Shows a shake on the screen.
+
+##### *Parameters*
+l - Length of the shake
+o - Offset of the shake
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+showshake(8, 4)
+~~~
+-----
+
+
+### showev(l, c, ev)
+-----
+_**Description**_: Shows an evidence item on the screen.
+
+##### *Parameters*
+l - How long the evidence is shown on the screen
+c - Corner from which it appears
+ev - The evidence item ID that is shown
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+showev(-1, TOP_LEFT, bullet)
+~~~
+-----
+
+
+### showaddev(ev)
+-----
+_**Description**_: Shows an evidence item being added on the screen.
+
+##### *Parameters*
+ev - The evidence item ID that is shown
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+showaddev(bullet)
+~~~
+-----
+
+
+### goto(s, ...)
+-----
+_**Description**_: Goes to a dialog, passing the parameters.
+
+##### *Parameters*
+s - Dialog name
+... - Parameters for the dialog constructor
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+goto("dynamicoptions", "Who?", "What?", "Where?")
+~~~
+-----
+
+
+### reset()
+-----
+_**Description**_: Resets the engine to the beginning.
+
+##### *Parameters*
+None.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+reset()
+~~~
+-----
+
+
+### newalign(a)
+-----
+_**Description**_: Re-aligns the text to ALIGN_LEFT, ALIGN_CENTER or ALIGN_RIGHT.
+
+##### *Parameters*
+a - The align type: ALIGN_LEFT, ALIGN_CENTER or ALIGN_RIGHT
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newalign(ALIGN_CENTER)
+~~~
+
+-----
+
+
+### newcolor(a)
+-----
+_**Description**_: Adds a new colour to the text.
+
+##### *Parameters*
+a - The hex color code
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newcolor("#00FF00")
+~~~
+-----
+
+
+### newbgm(bgm)
+-----
+_**Description**_: Loads and plays new background music.
+
+##### *Parameters*
+bgm - The background music ID.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newbgm(MOD_GEIJISSU)
+~~~
+-----
+
+
+### playsfx(sfx)
+-----
+_**Description**_: Loads and plays a sound effect.
+
+##### *Parameters*
+sfx - The sound effect ID
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+playsfx(SFX_TYPEWRITER)
+~~~
+-----
+
+
+### newspeaker(n, s)
+-----
+_**Description**_: Adds a new speaker to the screen, alongside a sound effect.
+
+##### *Parameters*
+n - Name of the speaker
+s - Sound effect
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+newspeaker("???", SFX_BLIPMALE)
+~~~
+-----
+
+
+### crossexam()
+-----
+_**Description**_: Prompts the cross examination dialog.
+
+##### *Parameters*
+None.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+crossexam()
+~~~
+-----
+
+
+### addhp(newhp)
+-----
+_**Description**_: Add health points to the user.
+
+##### *Parameters*
+newhp - The HP to add
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+addhp(14)
+~~~
+-----
+
+
+### showrisk(rhp)
+-----
+_**Description**_: Shows the risk animation to the health points of the character.
+
+##### *Parameters*
+rhp - The risked health points.
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+showrisk(24)
 ~~~
 -----
