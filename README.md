@@ -50,14 +50,14 @@ An amazing diagram that illustrates the hardware architecture well is one of dev
 
 The most important parts to note are the screen sizes (256x192), the two CPUs (ARM7 and ARM9) and the RAM amount (4MB). Due to all of these factors, the graphics library for the Nintendo DS is somewhat limited.
 
-1. Certain VRAM (video RAM) banks will operate on 15-bit RGB color. This implies that specified RGB values must be within (0 - 31), taking 2^5 bits of space each. The last bit is reserved to specify alpha levels on the memory bank.
+1. Certain VRAM (video RAM) banks will operate on 15-bit RGB color. This implies that specified RGB values must be within (`0` - `31`), taking 2^5 bits of space each. The last bit is reserved to specify alpha levels on the memory bank.
 2. The GBA (Gameboy Advance) cart is the "hack" used to accomplish my embedded file system implementation on external emulation. Basically, the Nintendo DS will act as if the embedded file system is actually extended RAM retrieved from the GBA slot, using resources found in the file system there. This is the sole reason why you must use the following command to run it on <a href="http://desmume.org/">DeSmuMe</a>:
     ~~~~~~~~~~~~~~~~~~
     ~ $ desmume gbaslot-rom=LuAA.nds LuAA.nds
     ~~~~~~~~~~~~~~~~~~
 
     This essentially allocates the GBA slot to the NDS ROM, allowing the actual run binary to access resources from it.
-3. Each screen has four background layers (BG0 ~ BG3). Each background layer, in 2D mode, has an 8-bit palette size limit and therefore can store tilemaps with up to 256 colours only.
+3. Each screen has four background layers (`BG0` ~ `BG3`). Each background layer, in 2D mode, has an 8-bit palette size limit and therefore can store tilemaps with up to 256 colours only.
 
 ### Software Specifications
 
@@ -75,7 +75,7 @@ The software architecture chosen for Lua is quite simple. If you open the `relea
 
 **data**: The external data used by the ROM that is not immediately loaded and cached by the ARM7/ARM9 processors. It should be of no surprise then, that this directory stores all the images, scripts and audio files required for LuAA to work.
 
-`ndstool`, located in the `bin` directory, is used to compile these above into a standalone ROM that can be run on multiple emulators and on official hardware. Exciting, right?
+`ndstool`, located in the `bin` directory, is used to compile these above into a standalone ROM that can be run on multiple emulators and on official hardware.
 
 Below is documentation on how to use the actual API.
 
