@@ -45,7 +45,7 @@ function talk()
     dofile("shell/gui/options.lua")
 end
 
-function dynamicoptions(...)
+function dynamic_options(...)
     newdyn(...)
     gui.deconstruct()
     dynamic = true
@@ -57,7 +57,7 @@ function dynamicoptions(...)
     end
 end
 
-function hasopt(opt)
+function has_opt(opt)
     local found = false
     
     for i,v in ipairs (tlkOpt) do
@@ -76,7 +76,7 @@ function hasopt(opt)
     return found
 end
 
-function newopt(...)
+function new_opt(...)
     local optset = {}
     for i = 1, select("#", ...) do
         optset[i] = {}
@@ -86,7 +86,7 @@ function newopt(...)
     return optset
 end
 
-function newmovopt(...)
+function new_mov_opt(...)
     local optset = {}
     for i = 1, select("#", ...) do
         optset[i] = {}
@@ -97,19 +97,19 @@ function newmovopt(...)
     return optset
 end
 
-function addtlk(opt)
+function add_tlk(opt)
     local optset = {}
     optset.text = opt:gsub("_", "")
     optset.script = opt:gsub(" ", "_")
     table.insert(tlkOpt, optset)
 end
 
-function newtlk(...)
-    tlkOpt = newopt(...)
+function new_tlk(...)
+    tlkOpt = new_opt(...)
 end
-function newmov(...)
-    movOpt = newmovopt(...)
+function new_mov(...)
+    movOpt = new_mov_opt(...)
 end
 function newdyn(...)
-    dynOpt = newopt(...)
+    dynOpt = new_opt(...)
 end

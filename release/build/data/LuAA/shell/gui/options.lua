@@ -63,7 +63,7 @@ elseif opt == dynOpt then
         WIDTH = 224,
         HEIGHT = 26
     }
-    selectanswer("Select your answer")
+    select_answer("Select your answer")
 end
 
 for i,v in ipairs(opt) do

@@ -34,7 +34,7 @@ profile = {}
 dynamic_pst = false
 pst = false
 
-function dynamicpresent()
+function dynamic_present()
     dynamic_pst = true
     pst = true
     gui.deconstruct()
@@ -52,7 +52,7 @@ function present()
     dofile("shell/gui/courtrecord.lua")
 end
 
-function hasev(ev)
+function has_ev(ev)
     local found = false
 
     if ev.category == PROFILES then
@@ -74,7 +74,7 @@ function hasev(ev)
     return found
 end
 
-function addev (ev)
+function add_ev (ev)
     if ev.category == PROFILES then
         table.insert (profile, ev)
         return table.maxn(profile)
@@ -84,7 +84,7 @@ function addev (ev)
     end
 end
 
-function subev (ev)
+function sub_ev (ev)
     local found = false
     local category = nil
 

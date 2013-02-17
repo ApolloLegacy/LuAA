@@ -168,7 +168,7 @@ jury()
 -----
 
 
-### crossexanimation()
+### cross_examination()
 -----
 _**Description**_: Plays the Cross Examination animation.
 
@@ -180,7 +180,7 @@ None.
 
 ##### *Example*
 ~~~
-crossexanimation()
+cross_examination()
 ~~~
 -----
 
@@ -278,7 +278,7 @@ unlock_successful()
 -----
 
 
-### dynamicpresent()
+### dynamic_present()
 -----
 _**Description**_: Forcefully advances the player to a Present dialog.
 
@@ -290,7 +290,7 @@ None.
 
 ##### *Example*
 ~~~
-dynamicpresent()
+dynamic_present()
 ~~~
 -----
 
@@ -312,9 +312,9 @@ present()
 -----
 
 
-### hasev(ev)
+### has_ev(ev)
 -----
-_**Description**_: Given an evidence ID, hasev checks to see if the player has the evidence item.
+_**Description**_: Given an evidence ID, has_ev checks to see if the player has the evidence item.
 
 ##### *Parameters*
 ev - The Evidence ID
@@ -324,14 +324,14 @@ Returns whether or not the evidence was found in the Court Record.
 
 ##### *Example*
 ~~~
-hasev(attorneybadge)
+has_ev(attorneybadge)
 ~~~
 -----
 
 
-### addev(ev)
+### add_ev(ev)
 -----
-_**Description**_: Given an evidence ID, addev adds the evidence item to the Court Record.
+_**Description**_: Given an evidence ID, add_ev adds the evidence item to the Court Record.
 
 ##### *Parameters*
 ev - The Evidence ID
@@ -341,14 +341,14 @@ Returns the maximum size of the Court Record after the add.
 
 ##### *Example*
 ~~~
-addev(pr_phoenix)
+add_ev(pr_phoenix)
 ~~~
 -----
 
 
-### subev(ev)
+### sub_ev(ev)
 -----
-_**Description**_: Given an evidence ID, subev removes the evidence item from the Court Record.
+_**Description**_: Given an evidence ID, sub_ev removes the evidence item from the Court Record.
 
 ##### *Parameters*
 ev - The Evidence ID
@@ -358,12 +358,12 @@ Returns whether or not the evidence was found in the Court Record.
 
 ##### *Example*
 ~~~
-subev(attorneybadge)
+sub_ev(attorneybadge)
 ~~~
 -----
 
 
-### dynamicexamine(path, size)
+### dynamic_examine(path, size)
 -----
 _**Description**_: Forcefully advances the player to an Examine dialog.
 
@@ -376,7 +376,7 @@ None.
 
 ##### *Example*
 ~~~
-dynamicexamine("movie/bang", 256)
+dynamic_examine("movie/bang", 256)
 ~~~
 -----
 
@@ -398,7 +398,7 @@ examine()
 -----
 
 
-### newhotspot()
+### new_hotspot()
 -----
 _**Description**_: Adds a new hotspot to an object.
 
@@ -414,12 +414,12 @@ Returns the amount of hotspots in the objection.
 
 ##### *Example*
 ~~~
-newhotspot(0, 0, 256, 192, "examined_map")
+new_hotspot(0, 0, 256, 192, "examined_map")
 ~~~
 -----
 
 
-### selectanswer()
+### select_answer()
 -----
 _**Description**_: Selects the answer within the option dialog.
 
@@ -431,7 +431,7 @@ None.
 
 ##### *Example*
 ~~~
-selectanswer("Why?")
+select_answer("Why?")
 ~~~
 -----
 
@@ -504,7 +504,7 @@ talk()
 -----
 
 
-### dynamicoptions()
+### dynamic_options()
 -----
 _**Description**_: Forcefully prompts the Options dialog.
 
@@ -516,12 +516,12 @@ None.
 
 ##### *Example*
 ~~~
-dynamicoptions("What?", "Why?", "Who?")
+dynamic_options("What?", "Why?", "Who?")
 ~~~
 -----
 
 
-### hasopt(opt)
+### has_opt(opt)
 -----
 _**Description**_: Does the options dialog have the option?
 
@@ -533,12 +533,12 @@ Returns whether or not the option is fine.
 
 ##### *Example*
 ~~~
-hasopt("Who?")
+has_opt("Who?")
 ~~~
 -----
 
 
-### newopt()
+### new_opt()
 -----
 _**Description**_: Adds a new option to the Option dialog.
 
@@ -550,12 +550,12 @@ None.
 
 ##### *Example*
 ~~~
-newopt()
+new_opt()
 ~~~
 -----
 
 
-### newmovopt(...)
+### new_mov_opt(...)
 -----
 _**Description**_: Adds a new move option to the Move dialog.
 
@@ -567,29 +567,12 @@ None.
 
 ##### *Example*
 ~~~
-newmovopt("Toronto")
+new_mov_opt("Toronto")
 ~~~
 -----
 
 
-### addtlk(opt)
------
-_**Description**_: Adds a new talk option to the Talk dialog.
-
-##### *Parameters*
-opt - The talk option text
-
-##### *Return value*
-None.
-
-##### *Example*
-~~~
-addtlk("What?")
-~~~
------
-
-
-### newtlk(opt)
+### add_tlk(opt)
 -----
 _**Description**_: Adds a new talk option to the Talk dialog.
 
@@ -601,12 +584,12 @@ None.
 
 ##### *Example*
 ~~~
-addtlk("What?")
+add_tlk("What?")
 ~~~
 -----
 
 
-### newmov(opt)
+### new_tlk(opt)
 -----
 _**Description**_: Adds a new talk option to the Talk dialog.
 
@@ -618,7 +601,24 @@ None.
 
 ##### *Example*
 ~~~
-addtlk("What?")
+add_tlk("What?")
+~~~
+-----
+
+
+### new_mov(opt)
+-----
+_**Description**_: Adds a new talk option to the Talk dialog.
+
+##### *Parameters*
+opt - The talk option text
+
+##### *Return value*
+None.
+
+##### *Example*
+~~~
+add_tlk("What?")
 ~~~
 -----
 
@@ -642,7 +642,7 @@ goto_save(4, 3, 2)
 -----
 
 
-### newbg(p, size)
+### new_bg(p, size)
 -----
 _**Description**_: Creates a new background.
 
@@ -655,12 +655,12 @@ None.
 
 ##### *Example*
 ~~~
-newbg("movie/alarm", 256)
+new_bg("movie/alarm", 256)
 ~~~
 -----
 
 
-### newfg(p, size)
+### new_fg(p, size)
 -----
 _**Description**_: Creates a new foreground.
 
@@ -673,12 +673,12 @@ None.
 
 ##### *Example*
 ~~~
-newfg("movie/bang", 256)
+new_fg("movie/bang", 256)
 ~~~
 -----
 
 
-### newchar(n, e, aa, ia, ta)
+### new_char(n, e, aa, ia, ta)
 -----
 _**Description**_: Create a new character.
 
@@ -694,12 +694,12 @@ None.
 
 ##### *Example*
 ~~~
-newchar("Gumshoe", "thinking", "talk", "blink")
+new_char("Gumshoe", "thinking", "talk", "blink")
 ~~~
 -----
 
 
-### newemo(e)
+### new_emo(e)
 -----
 _**Description**_: Prompts a new emotion for the character.
 
@@ -711,12 +711,12 @@ None.
 
 ##### *Example*
 ~~~
-newemo("disheartened")
+new_emo("disheartened")
 ~~~
 -----
 
 
-### newactive(a)
+### new_active(a)
 -----
 _**Description**_: Prompts a new active animation for the character.
 
@@ -728,12 +728,12 @@ None.
 
 ##### *Example*
 ~~~
-newactive("thinking")
+new_active("thinking")
 ~~~
 -----
 
 
-### newidle(a)
+### new_idle(a)
 -----
 _**Description**_: Prompts a new idle animation for the character.
 
@@ -745,12 +745,12 @@ None.
 
 ##### *Example*
 ~~~
-newidle("disheartened")
+new_idle("disheartened")
 ~~~
 -----
 
 
-### newtransition(a)
+### new_transition(a)
 -----
 _**Description**_: Prompts a new transition animation for the character.
 
@@ -762,7 +762,7 @@ None.
 
 ##### *Example*
 ~~~
-newtransition("blink")
+new_transition("blink")
 ~~~
 -----
 
@@ -801,24 +801,7 @@ flash("#FF0000")
 -----
 
 
-### flash(c)
------
-_**Description**_: Shows a flash on the screen.
-
-##### *Parameters*
-c - The hex color code of the flash
-
-##### *Return value*
-None.
-
-##### *Example*
-~~~
-flash("#FF0000")
-~~~
------
-
-
-### showshake(l, o)
+### show_shake(l, o)
 -----
 _**Description**_: Shows a shake on the screen.
 
@@ -831,12 +814,12 @@ None.
 
 ##### *Example*
 ~~~
-showshake(8, 4)
+show_shake(8, 4)
 ~~~
 -----
 
 
-### showev(l, c, ev)
+### show_ev(l, c, ev)
 -----
 _**Description**_: Shows an evidence item on the screen.
 
@@ -850,12 +833,12 @@ None.
 
 ##### *Example*
 ~~~
-showev(-1, TOP_LEFT, bullet)
+show_ev(-1, TOP_LEFT, bullet)
 ~~~
 -----
 
 
-### showaddev(ev)
+### show_add_ev(ev)
 -----
 _**Description**_: Shows an evidence item being added on the screen.
 
@@ -867,7 +850,7 @@ None.
 
 ##### *Example*
 ~~~
-showaddev(bullet)
+show_add_ev(bullet)
 ~~~
 -----
 
@@ -885,7 +868,7 @@ None.
 
 ##### *Example*
 ~~~
-goto("dynamicoptions", "Who?", "What?", "Where?")
+goto("dynamic_options", "Who?", "What?", "Where?")
 ~~~
 -----
 
@@ -907,7 +890,7 @@ reset()
 -----
 
 
-### newalign(a)
+### new_align(a)
 -----
 _**Description**_: Re-aligns the text to ALIGN_LEFT, ALIGN_CENTER or ALIGN_RIGHT.
 
@@ -919,13 +902,13 @@ None.
 
 ##### *Example*
 ~~~
-newalign(ALIGN_CENTER)
+new_align(ALIGN_CENTER)
 ~~~
 
 -----
 
 
-### newcolor(a)
+### new_color(a)
 -----
 _**Description**_: Adds a new colour to the text.
 
@@ -937,12 +920,12 @@ None.
 
 ##### *Example*
 ~~~
-newcolor("#00FF00")
+new_color("#00FF00")
 ~~~
 -----
 
 
-### newbgm(bgm)
+### new_bgm(bgm)
 -----
 _**Description**_: Loads and plays new background music.
 
@@ -954,12 +937,12 @@ None.
 
 ##### *Example*
 ~~~
-newbgm(MOD_GEIJISSU)
+new_bgm(MOD_GEIJISSU)
 ~~~
 -----
 
 
-### playsfx(sfx)
+### play_sfx(sfx)
 -----
 _**Description**_: Loads and plays a sound effect.
 
@@ -971,12 +954,12 @@ None.
 
 ##### *Example*
 ~~~
-playsfx(SFX_TYPEWRITER)
+play_sfx(SFX_TYPEWRITER)
 ~~~
 -----
 
 
-### newspeaker(n, s)
+### new_speaker(n, s)
 -----
 _**Description**_: Adds a new speaker to the screen, alongside a sound effect.
 
@@ -989,12 +972,12 @@ None.
 
 ##### *Example*
 ~~~
-newspeaker("???", SFX_BLIPMALE)
+new_speaker("???", SFX_BLIPMALE)
 ~~~
 -----
 
 
-### crossexam()
+### dynamic_cross_examination()
 -----
 _**Description**_: Prompts the cross examination dialog.
 
@@ -1006,12 +989,12 @@ None.
 
 ##### *Example*
 ~~~
-crossexam()
+dynamic_cross_examination()
 ~~~
 -----
 
 
-### addhp(newhp)
+### add_hp(newhp)
 -----
 _**Description**_: Add health points to the user.
 
@@ -1023,12 +1006,12 @@ None.
 
 ##### *Example*
 ~~~
-addhp(14)
+add_hp(14)
 ~~~
 -----
 
 
-### showrisk(rhp)
+### show_risk(rhp)
 -----
 _**Description**_: Shows the risk animation to the health points of the character.
 
@@ -1040,6 +1023,6 @@ None.
 
 ##### *Example*
 ~~~
-showrisk(24)
+show_risk(24)
 ~~~
 -----

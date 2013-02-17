@@ -30,9 +30,9 @@
 
 _G["Studio 2"] = function()
     fade_in(SCREEN_UP, 1)
-    newbg("locations/globalstudio2", 512)
+    new_bg("locations/globalstudio2", 512)
     fade_out(SCREEN_UP, 1)
-    newmov(gs_gate, gs_studio2)
+    new_mov(gs_gate, gs_studio2)
     interact = function(mode, selected)
         if mode == EXAMINE then
             if selected == "Welcome Sign" then
@@ -54,13 +54,13 @@ end
 
 _G["Studio Path"] = function()
     fade_in(SCREEN_UP, 1)
-    newbg("locations/globalstudiocamera", 256)
+    new_bg("locations/globalstudiocamera", 256)
     fade_out(SCREEN_UP, 1)
-    newhotspot(61, 2, 182, 34, "Welcome Sign")
-    newhotspot(109, 45, 71, 59, "Broken Statue")
-    newhotspot(34, 25, 27, 29, "Camera")
-    newhotspot(196, 70, 40, 25, "Studio One Entrance")
-    newmov(gs_gate, gs_studio2)
+    new_hotspot(61, 2, 182, 34, "Welcome Sign")
+    new_hotspot(109, 45, 71, 59, "Broken Statue")
+    new_hotspot(34, 25, 27, 29, "Camera")
+    new_hotspot(196, 70, 40, 25, "Studio One Entrance")
+    new_mov(gs_gate, gs_studio2)
     interact = function(mode, selected)
         if mode == EXAMINE then
             if selected == "Welcome Sign" then
@@ -82,38 +82,38 @@ end
 
 _G["Global Studio's Gate"] = function()
     fade_in(SCREEN_UP, 1)
-    newbg("locations/globalstudioentrance", 256)
+    new_bg("locations/globalstudioentrance", 256)
     fade_out(SCREEN_UP, 1)
-    newhotspot(5, 48, 68, 61, "Security Booth")
-    newhotspot(113, 91, 76, 30, "Gate")
-    newhotspot(191, 75, 56, 66, "Van")
-    newhotspot(70, 71, 21, 49, "Sign")
-    newmov(gs_entrance)
-    newtlk("Defendant", "Decisive evidence")
+    new_hotspot(5, 48, 68, 61, "Security Booth")
+    new_hotspot(113, 91, 76, 30, "Gate")
+    new_hotspot(191, 75, 56, 66, "Van")
+    new_hotspot(70, 71, 21, 49, "Sign")
+    new_mov(gs_entrance)
+    new_tlk("Defendant", "Decisive evidence")
     interact = function(mode, selected)
         if mode == EXAMINE then
-            newspeaker("Phoenix")
-            newcolor("6BC6F7")
+            new_speaker("Phoenix")
+            new_color("6BC6F7")
             if selected == "Security Booth" then
                     msg("(The security booth containing images from various security cameras in the park.)")
                 if gumshoeIsGone == true then
                     msg("(Hmm... it looks like all the camera IDs are here...)")
                     msg("(Which camera would have the images I want?){next}")
-                    goto("dynamicoptions", "SC-4G8", "SC-2M0", "SC-8Z1")
+                    goto("dynamic_options", "SC-4G8", "SC-2M0", "SC-8Z1")
                     if selected == "SC-4G8" or selected == "SC-8Z1" then
                         msg("(Doesn't look like this one has anything I need...){next}")
                     else
                         msg("(...? Wait a second...)")
                         msg("(This could come in handy!)")
-                        addev(photo)
-                        showaddev(evidence[table.maxn(evidence)])
-                        newspeaker("")
+                        add_ev(photo)
+                        show_add_ev(evidence[table.maxn(evidence)])
+                        new_speaker("")
                         msg(evidence[table.maxn(evidence)].name .. " added to the court record.{next}")
                     end
                 else
-                    newspeaker("Gumshoe")
-                    newcolor("FFFFFF")
-                    newemo("mad")
+                    new_speaker("Gumshoe")
+                    new_color("FFFFFF")
+                    new_emo("mad")
                     msg("WHAT ARE YOU LOOKING AT, PAL?!")
                 end
             elseif selected == "Gate" then
@@ -126,7 +126,7 @@ _G["Global Studio's Gate"] = function()
             else
                 msg("(Nothing interesting here...)")
             end
-            if hasev(photo) == true then
+            if has_ev(photo) == true then
                 msg("(I think I'm ready for tomorrow's trial...)")
                 msg("(Or at least, I better be ready...)")
                 goto("District Lobby")
@@ -136,103 +136,103 @@ _G["Global Studio's Gate"] = function()
             --if gumshoeIsGone == true then
                 goto(selected)
             --[[else
-                newspeaker("Gumshoe")
-                newcolor("FFFFFF")
-                newemo("mad")
+                new_speaker("Gumshoe")
+                new_color("FFFFFF")
+                new_emo("mad")
                 msg("Don't be entering the crime scene now!{next}")
                 goto("move")
             end]]
         elseif mode == TALK then
-            newspeaker("Gumshoe")
-            newcolor("FFFFFF")
+            new_speaker("Gumshoe")
+            new_color("FFFFFF")
             if selected == "Defendant" then
-                newemo("normal")
+                new_emo("normal")
                 msg("The victim's name is Yak Uza.")
-                if hasev(pr_yakuza) == false then addev(pr_yakuza) end
-                newemo("confident")
+                if has_ev(pr_yakuza) == false then add_ev(pr_yakuza) end
+                new_emo("confident")
                 msg("He's had a history with the mafia... sort of had it coming.")
-                newemo("side")
+                new_emo("side")
                 msg("Don't worry though, I think we found our man.")
-                newemo("mad")
+                new_emo("mad")
                 msg("This guy did it for sure! I'm telling you!")
-                if hasev(pr_furio) == false then addev(pr_furio) end
-                newemo("pumped")
-                msg("They call him 'The Tiger'. He's a crook! His name's {newcolor(F77339)}Furio Tigre{newcolor(FFFFFF)}.")
+                if has_ev(pr_furio) == false then add_ev(pr_furio) end
+                new_emo("pumped")
+                msg("They call him 'The Tiger'. He's a crook! His name's {new_color(F77339)}Furio Tigre{new_color(FFFFFF)}.")
                 msg("All the evidence points against him, including his gun.")
-                if hasopt("Murder Weapon") == false then
-                    addtlk("Murder Weapon")
+                if has_opt("Murder Weapon") == false then
+                    add_tlk("Murder Weapon")
                 end
-                newemo("disheartened")
+                new_emo("disheartened")
                 msg("Oops. Pretend I didn't say that.{next}")
             elseif selected == "Murder Weapon" then
-                newemo("laughing")
+                new_emo("laughing")
                 msg("I guess the cat's out of the bag.")
-                newemo("normal")
+                new_emo("normal")
                 msg("That Furio Tigre guy used his pistol.")
-                newemo("thinking")
+                new_emo("thinking")
                 msg("Or at least I think it's his pistol.")
-                newemo("mad")
+                new_emo("mad")
                 msg("Anyways, he's a CROOK! I'm telling you!")
-                newemo("disheartened")
+                new_emo("disheartened")
                 msg("I'm afraid I don't have the pistol on me.")
-                newemo("confident")
+                new_emo("confident")
                 msg("But we also found a {showbullet()}bullet in the victim's body.")
-                if hasev(report) == false then
-                    newemo("normal")
+                if has_ev(report) == false then
+                    new_emo("normal")
                     msg("Here's the autopsy report.")
-                    addev(report)
-                    showaddev(evidence[table.maxn(evidence)])
-                    newspeaker("")
-                    newcolor("6BC6F7")
+                    add_ev(report)
+                    show_add_ev(evidence[table.maxn(evidence)])
+                    new_speaker("")
+                    new_color("6BC6F7")
                     msg(evidence[table.maxn(evidence)].name .. " added to the court record.{next}")
-                    newcolor("FFFFFF")
-                    newspeaker("Gumshoe")
+                    new_color("FFFFFF")
+                    new_speaker("Gumshoe")
                 else
-                    newemo("normal")
+                    new_emo("normal")
                     msg("The pistol used 8 mm bullets.{next}")
                 end
             elseif selected == "Decisive evidence" then
-                newemo("normal")
+                new_emo("normal")
                 msg("The killer's fingerprints on the pistol match a set at the crime scene.")
-                newemo("thinking")
+                new_emo("thinking")
                 msg("The set is on a bottle of expired soy milk, pal.")
-                newemo("laughing")
+                new_emo("laughing")
                 msg("Yeah, we got a sour killer out there.")
                 msg("Hahaha... pal.{next}")
             end
-            if hasev(pr_furio) == true and hasev(report) == true and talked["Decisive evidence"] == true then
+            if has_ev(pr_furio) == true and has_ev(report) == true and talked["Decisive evidence"] == true then
                 msg("Hmm... looks like I gotta get back to the precinct.")
-                newemo("mad")
+                new_emo("mad")
                 msg("Don't be nosing around, pal!")
                 gumshoeIsGone = true
-                newchar(nil)
-                newspeaker(nil)
+                new_char(nil)
+                new_speaker(nil)
                 alpha_out(SCREEN_UP, 1, "art/char/Gumshoe/mad(talk)", 1024)
                 goto("interaction")
             else
                 goto("talk")
             end
         elseif mode == PRESENT then
-            newspeaker("Gumshoe")
-            newcolor("FFFFFF")
+            new_speaker("Gumshoe")
+            new_color("FFFFFF")
             if selected == "Dick Gumshoe" then
-                newemo("confident")
+                new_emo("confident")
                 msg("Handsome, aren't I?{next}")
             elseif selected == "Attorney Badge" then
-                newemo("side")
+                new_emo("side")
                 msg("I already know you're an attorney...{next}")
             elseif selected == "Autopsy Report" then
-                newspeaker("Phoenix")
+                new_speaker("Phoenix")
                 msg("Why is the time of death unknown?")
-                newspeaker("Gumshoe")
-                newemo("pumped")
+                new_speaker("Gumshoe")
+                new_emo("pumped")
                 msg("Because it IS! Can't you read?!")
-                newspeaker("Phoenix")
-                newcolor("6BC6F7")
+                new_speaker("Phoenix")
+                new_color("6BC6F7")
                 msg("(sheesh...){next}")
-                newcolor("FFFFFF")
+                new_color("FFFFFF")
             else
-                newemo("thinking")
+                new_emo("thinking")
                 msg("Why are you showing me this?{next}")
             end
             goto("present")

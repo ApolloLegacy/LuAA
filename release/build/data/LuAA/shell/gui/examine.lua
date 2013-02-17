@@ -89,7 +89,7 @@ end
 
 gui.fade_in()
 
-if dynamic then selectanswer("Select area via Touch Screen") end
+if dynamic then select_answer("Select area via Touch Screen") end
 
 function gui.deconstruct()
     gui.fade_out()

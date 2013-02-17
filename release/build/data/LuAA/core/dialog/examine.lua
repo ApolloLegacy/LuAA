@@ -31,7 +31,7 @@
 ex = {}
 hotspot = {}
 
-function dynamicexamine(path, size)
+function dynamic_examine(path, size)
     dynamic = true
     ex.path = path
     ex.size = size
@@ -49,7 +49,7 @@ function examine()
     dofile("shell/gui/examine.lua")
 end
 
-function newhotspot(x, y, w, h, obj)
+function new_hotspot(x, y, w, h, obj)
     local hs = {
         X1 = x,
         Y1 = y,

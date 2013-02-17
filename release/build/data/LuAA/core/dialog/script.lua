@@ -48,13 +48,13 @@ ev_event.pic = ""
 ev_event.fg = nil
 ev_event.bg = nil
 
-addev_event = {}
-addev_event.x = 0
-addev_event.y = 0
-addev_event.w = 0
-addev_event.h = 0
-addev_event.ev = nil
-addev_event.fg = nil
+add_ev_event = {}
+add_ev_event.x = 0
+add_ev_event.y = 0
+add_ev_event.w = 0
+add_ev_event.h = 0
+add_ev_event.ev = nil
+add_ev_event.fg = nil
 
 function msg(text)
     local line = 1
@@ -272,22 +272,22 @@ function msg(text)
             end
         end
 
-        if addev_event.fg then
-            screen.drawFillRect(SCREEN_UP, addev_event.x, addev_event.y, addev_event.x + addev_event.w, addev_event.y + addev_event.h, PW_PERU)
-            gui["BORDER"].draw(SCREEN_UP, addev_event.x, addev_event.y, addev_event.w, addev_event.h)
-            screen.blit(SCREEN_UP, addev_event.x + 8, addev_event.y + 8, addev_event.fg)
-            gui["BORDER"].draw(SCREEN_UP, addev_event.x + 6, addev_event.y + 6, 68, 68)
-            screen.drawFillRect(SCREEN_UP, addev_event.x + 91, addev_event.y + 8, addev_event.x + 246, addev_event.y + 25, PW_DIMGREY)
-            screen.drawFillRect(SCREEN_UP, addev_event.x + 92, addev_event.y + 26, addev_event.x + 246, addev_event.y + 72, PW_LIGHTGREEN)
-            screen.drawLine(SCREEN_UP, addev_event.x + 91, addev_event.y + 25, addev_event.x + 246, addev_event.y + 26, PW_PALEGREEN)
-            screen.drawLine(SCREEN_UP, addev_event.x + 91, addev_event.y + 26, addev_event.x + 91, addev_event.y + 72, PW_PALEGREEN)
-            gui["BORDER"].draw(SCREEN_UP, addev_event.x + 89, addev_event.y + 6, 159, 68)
-            screen.printFont(SCREEN_UP, addev_event.x + 91 + (155 / 2) - (Font.getStringWidth(font, addev_event.ev.name) / 2), addev_event.y + 7, addev_event.ev.name, PW_ORANGE, font)
-            for i,v in ipairs(addev_event.ev.info) do
-                screen.printFont(SCREEN_UP, addev_event.x + 96, addev_event.y + 28 + 15 * (i - 1), v, PW_PALEGREEN, arial)
-                screen.printFont(SCREEN_UP, addev_event.x + 96, addev_event.y + 27 + 15 * (i - 1), v, PW_DIMGREY, arial)
+        if add_ev_event.fg then
+            screen.drawFillRect(SCREEN_UP, add_ev_event.x, add_ev_event.y, add_ev_event.x + add_ev_event.w, add_ev_event.y + add_ev_event.h, PW_PERU)
+            gui["BORDER"].draw(SCREEN_UP, add_ev_event.x, add_ev_event.y, add_ev_event.w, add_ev_event.h)
+            screen.blit(SCREEN_UP, add_ev_event.x + 8, add_ev_event.y + 8, add_ev_event.fg)
+            gui["BORDER"].draw(SCREEN_UP, add_ev_event.x + 6, add_ev_event.y + 6, 68, 68)
+            screen.drawFillRect(SCREEN_UP, add_ev_event.x + 91, add_ev_event.y + 8, add_ev_event.x + 246, add_ev_event.y + 25, PW_DIMGREY)
+            screen.drawFillRect(SCREEN_UP, add_ev_event.x + 92, add_ev_event.y + 26, add_ev_event.x + 246, add_ev_event.y + 72, PW_LIGHTGREEN)
+            screen.drawLine(SCREEN_UP, add_ev_event.x + 91, add_ev_event.y + 25, add_ev_event.x + 246, add_ev_event.y + 26, PW_PALEGREEN)
+            screen.drawLine(SCREEN_UP, add_ev_event.x + 91, add_ev_event.y + 26, add_ev_event.x + 91, add_ev_event.y + 72, PW_PALEGREEN)
+            gui["BORDER"].draw(SCREEN_UP, add_ev_event.x + 89, add_ev_event.y + 6, 159, 68)
+            screen.printFont(SCREEN_UP, add_ev_event.x + 91 + (155 / 2) - (Font.getStringWidth(font, add_ev_event.ev.name) / 2), add_ev_event.y + 7, add_ev_event.ev.name, PW_ORANGE, font)
+            for i,v in ipairs(add_ev_event.ev.info) do
+                screen.printFont(SCREEN_UP, add_ev_event.x + 96, add_ev_event.y + 28 + 15 * (i - 1), v, PW_PALEGREEN, arial)
+                screen.printFont(SCREEN_UP, add_ev_event.x + 96, add_ev_event.y + 27 + 15 * (i - 1), v, PW_DIMGREY, arial)
             end
-            if addev_event.x > 0 then addev_event.x = addev_event.x - 16 end
+            if add_ev_event.x > 0 then add_ev_event.x = add_ev_event.x - 16 end
         end
 
         if speaker.name then
@@ -333,21 +333,21 @@ function msg(text)
         gui.update()
     end
 
-    if addev_event.fg then
+    if add_ev_event.fg then
         repeat
             shell.draw()
             render()
-            addev_event.x = addev_event.x - 16
-        until addev_event.x == -256
-        Image.destroy(addev_event.fg)
-        addev_event.fg = nil
-        addev_event = {}
-        addev_event.x = 0
-        addev_event.y = 0
-        addev_event.w = 0
-        addev_event.h = 0
-        addev_event.ev = nil
-        addev_event.fg = nil
+            add_ev_event.x = add_ev_event.x - 16
+        until add_ev_event.x == -256
+        Image.destroy(add_ev_event.fg)
+        add_ev_event.fg = nil
+        add_ev_event = {}
+        add_ev_event.x = 0
+        add_ev_event.y = 0
+        add_ev_event.w = 0
+        add_ev_event.h = 0
+        add_ev_event.ev = nil
+        add_ev_event.fg = nil
     end
     state = 0
     direction = 1
@@ -357,13 +357,13 @@ function flash(c)
     screen.drawFillRect(SCREEN_UP, 0, 0, 256, 192, tocolor (c))
 end
 
-function showshake(l, o)
+function show_shake(l, o)
     shake_event = {}
     shake_event.length = l
     shake_event.offset = o
 end
 
-function showev(l, c, ev)
+function show_ev(l, c, ev)
     ev_event = {}
     ev_event.frame = 1
     ev_event.direction = 1
@@ -374,14 +374,14 @@ function showev(l, c, ev)
     ev_event.bg = nil
 end
 
-function showaddev(ev)
-    addev_event = {}
-    addev_event.x = 256
-    addev_event.y = 16
-    addev_event.w = 256
-    addev_event.h = 80
-    addev_event.ev = ev
-    addev_event.fg = Image.load("art/ev/" .. ev.pic, RAM)
+function show_add_ev(ev)
+    add_ev_event = {}
+    add_ev_event.x = 256
+    add_ev_event.y = 16
+    add_ev_event.w = 256
+    add_ev_event.h = 80
+    add_ev_event.ev = ev
+    add_ev_event.fg = Image.load("art/ev/" .. ev.pic, RAM)
 end
 
 function goto(s, ...)
@@ -399,10 +399,10 @@ function reset()
     dofile("core/core.lua")
 end
 
-function newalign(a)
+function new_align(a)
     alignment = a
 end
 
-function newcolor(c)
+function new_color(c)
     fontcolor = tocolor(c)
 end

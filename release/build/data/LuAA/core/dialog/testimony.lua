@@ -30,7 +30,7 @@
 
 hp = 80
 
-function crossexam()
+function dynamic_cross_examination()
     gui.deconstruct()
     dofile("shell/gui/testimony.lua")
     testimony = {}
@@ -38,7 +38,7 @@ function crossexam()
     tsm_line = 1
 end
 
-function addhp(newhp)
+function add_hp(newhp)
     if type(newhp) == "number" then    
         hp = hp + newhp
     end
@@ -51,7 +51,7 @@ function addhp(newhp)
     risked_hp = nil
 end
 
-function showrisk(rhp)
+function show_risk(rhp)
     risked_hp = {}
     risked_hp.alpha = 0
     risked_hp.direction = 1

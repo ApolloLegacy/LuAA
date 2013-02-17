@@ -115,7 +115,7 @@ end
 function gavel()
     local path = fg.path
     local size = fg.size
-    newfg("pregavel", 512)
+    new_fg("pregavel", 512)
     local timer = 0
     repeat
         gui.draw()
@@ -124,7 +124,7 @@ function gavel()
         render()
         timer = timer + 1
     until timer == 2
-    newfg("gavel", 256)
+    new_fg("gavel", 256)
     timer = 0
     repeat
         gui.draw()
@@ -133,14 +133,14 @@ function gavel()
         render()
         timer = timer + 1
     until timer == 11
-    newfg(path, size)
+    new_fg(path, size)
 end
 
 function jury()
     local path = bg.path
     local size = bg.size
 
-    newbg("locations/courtroomoverview", 256)
+    new_bg("locations/courtroomoverview", 256)
     local df_img = Image.load("art/spr/CRO/CRODf" .. defense .. ".png", VRAM)
     local pr_img = Image.load("art/spr/CRO/CROPr" .. prosecution .. ".png", VRAM)
     local wt_img = Image.load("art/spr/CRO/CROWt" .. witness .. ".png", VRAM)
@@ -184,11 +184,11 @@ function jury()
         Image.destroy(l_crowd[i])
         l_crowd[i] = nil
     end
-    newbg(path, size)
+    new_bg(path, size)
 end
 
-function crossexamination()
-    alpha_inout("crossexamination")
+function cross_examination()
+    alpha_inout("cross_examination")
 end
 
 function witnesstestimony()

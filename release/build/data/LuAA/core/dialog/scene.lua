@@ -32,7 +32,7 @@ bg = {}
 
 fg = {}
 
-function newbg(p, size)
+function new_bg(p, size)
     bg.path = p
     bg.size = 0
     bg.x = 0
@@ -54,7 +54,7 @@ function newbg(p, size)
     end
 end
 
-function newfg(p, size)
+function new_fg(p, size)
     fg.path = p
     fg.size = 0
     fg.x = 0
@@ -76,7 +76,7 @@ function newfg(p, size)
     end
 end
 
-function newchar(n, e, aa, ia, ta)
+function new_char(n, e, aa, ia, ta)
     char.name = n
     char.emotion = e
     char.active = aa
@@ -90,20 +90,20 @@ function newchar(n, e, aa, ia, ta)
     end
 end
 
-function newemo(e)
+function new_emo(e)
     char.emotion = e
     char.construct(char.active)
 end
 
-function newactive(a)
+function new_active(a)
     char.active = a
     char.construct(char.active)
 end
 
-function newidle(a)
+function new_idle(a)
     char.idle = a
 end
 
-function newtransition(a)
+function new_transition(a)
     char.transition = a
 end

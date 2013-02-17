@@ -34,14 +34,14 @@ speaker.sound = nil
 Sound.setModVolume(600)
 Sound.bgm = nil
 
-function newbgm(bgm)
+function new_bgm(bgm)
     if Sound.bgm then Sound.unloadMod(Sound.bgm) end
     Sound.bgm = bgm
     Sound.loadMod(bgm)
     Sound.startMod(bgm, PLAY_LOOP)
 end
 
-function playsfx(sfx)
+function play_sfx(sfx)
     Sound.loadSFX(sfx)
     Sound.startSFX(sfx)
     Sound.unloadSFX(sfx)
@@ -59,7 +59,7 @@ function isSpoken(v, c)
     end
 end
 
-function newspeaker(n, s)
+function new_speaker(n, s)
     speaker.name = n
     if s then
         if speaker.sound then Sound.unloadSFX(speaker.sound) end

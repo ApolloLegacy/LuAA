@@ -36,7 +36,7 @@ textbox = {
     message = nil
 }
 
-function selectanswer(text)
+function select_answer(text)
     local timer = 0
     textbox.message = text
     repeat
