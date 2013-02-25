@@ -18,8 +18,9 @@ Please follow the README found in the <a href="https://github.com/microlua/sourc
 Discussion Threads
 ---------------------------------------------------------------------------------------------------------
 
-- All discussion regarding LuAA may be found in its respective <a href="http://microlua.xooit.fr/t837-LuAA-Ace-Attorney-Casemaker.htm">thread</a>.
-- All discussion regarding the embedded file system implementation may be found in its respective <a href="http://microlua.xooit.fr/t1046-EFSLib-with-MicroLua-4-6-1.htm">thread</a>.
+- <a href="http://microlua.xooit.fr/t837-LuAA-Ace-Attorney-Casemaker.htm">LuAA thread</a>
+- <a href="http://microlua.xooit.fr/t1046-EFSLib-with-MicroLua-4-6-1.htm">Embedded file system implementation thread</a>
+- <a href="http://microlua.xooit.fr/t505-mmLutil.htm#p6984">mmutil thread</a>
 
 Background Information
 ---------------------------------------------------------------------------------------------------------
