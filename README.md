@@ -192,6 +192,7 @@ _**Description**_: Fades in the top screen, given it's id (0 - 3).
 
 ##### *Parameters*
 screen_id - The screen ID (SCREEN_UP or SCREEN_DOWN)
+
 spd - Speed for which the fade_in occurs (must be at least 0)
 
 ##### *Return value*
@@ -210,6 +211,7 @@ _**Description**_: Fades out of the top screen, given it's id.
 
 ##### *Parameters*
 screen_id - The screen ID (SCREEN_UP or SCREEN_DOWN)
+
 spd - Speed for which the fade_out occurs (must be at least 0)
 
 ##### *Return value*
@@ -228,8 +230,11 @@ _**Description**_: Introduces an image to the screen, fading it in via an alpha 
 
 ##### *Parameters*
 screen_id - The background layer (0 - 3)
+
 spd - Speed for which the alpha_in occurs (must be at least 0)
+
 img - The path to the image to be loaded
+
 size - The size of the image's tilemap
 
 ##### *Return value*
@@ -248,8 +253,11 @@ _**Description**_: Introduces an image to the screen, fading it out via an alpha
 
 ##### *Parameters*
 screen_id - The background layer (0 - 3)
+
 spd - Speed for which the alpha_out occurs (must be at least 0)
+
 img - The path to the image to be loaded
+
 size - The size of the image's tilemap
 
 ##### *Return value*
@@ -370,6 +378,7 @@ _**Description**_: Forcefully advances the player to an Examine dialog.
 
 ##### *Parameters*
 path - Path of the examine background.
+
 size - The size of the examine background's tilemap.
 
 ##### *Return value*
@@ -405,9 +414,13 @@ _**Description**_: Adds a new hotspot to an object.
 
 ##### *Parameters*
 x - x value of the rectangle
+
 y - y value of the rectangle
+
 w - width of the rectangle
+
 h - height of the rectangle
+
 obj - the object to bind the hotspot to
 
 ##### *Return value*
@@ -630,7 +643,9 @@ _**Description**_: Forcefully prompts player to Save dialog.
 
 ##### *Parameters*
 g - Game ID
+
 c - Chapter ID
+
 bm - Bookmark ID
 
 ##### *Return value*
@@ -649,6 +664,7 @@ _**Description**_: Creates a new background.
 
 ##### *Parameters*
 p - Path to the background image
+
 size - Size of the background image's tilemap
 
 ##### *Return value*
@@ -667,6 +683,7 @@ _**Description**_: Creates a new foreground.
 
 ##### *Parameters*
 p - Path to the foreground image
+
 size - Size of the foreground image's tilemap
 
 ##### *Return value*
@@ -685,9 +702,13 @@ _**Description**_: Create a new character.
 
 ##### *Parameters*
 n - The name of the character
+
 e - The default emotion the character conveys
+
 aa - The default active animation
+
 ia - The default idle animation
+
 ta - The default transition animation
 
 ##### *Return value*
@@ -808,6 +829,7 @@ _**Description**_: Shows a shake on the screen.
 
 ##### *Parameters*
 l - Length of the shake
+
 o - Offset of the shake
 
 ##### *Return value*
@@ -826,7 +848,9 @@ _**Description**_: Shows an evidence item on the screen.
 
 ##### *Parameters*
 l - How long the evidence is shown on the screen
+
 c - Corner from which it appears
+
 ev - The evidence item ID that is shown
 
 ##### *Return value*
@@ -862,6 +886,7 @@ _**Description**_: Goes to a dialog, passing the parameters.
 
 ##### *Parameters*
 s - Dialog name
+
 ... - Parameters for the dialog constructor
 
 ##### *Return value*
@@ -966,6 +991,7 @@ _**Description**_: Adds a new speaker to the screen, alongside a sound effect.
 
 ##### *Parameters*
 n - Name of the speaker
+
 s - Sound effect
 
 ##### *Return value*
