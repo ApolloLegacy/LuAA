@@ -8,7 +8,7 @@ LuAA
     <img src="http://i51.tinypic.com/169g9af.png">
 </p>
 
-LuAA (abbr. for Lua Ace Attorney) is a mobile adventure game engine programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool). LuAA placed <a href="http://www.neoflash.com/forum/index.php/topic,5608.0.html">1st in the Neoflash Spring Coding Competition 2009</a>, winning a $300 prize.
+LuAA (abbreviated for Lua Ace Attorney) is a mobile adventure game engine programmed in an open-source distribution of the extensible language, Lua, namely MicroLua. MicroLua is designed for ARM hardware architecture, specifically for an ARM7/ARM9 processor configuration found in the Nintendo DS. Thus, it disallows allocation of memory past 4MB, internally. It is packaged with the compiled (proprietary) ARM7/ARM9 binaries to prevent user manipulation. However, the front-end programmed in MicroLua is powerful enough for user customizability (re-compile all included files using NDSTool). LuAA placed <a href="http://www.neoflash.com/forum/index.php/topic,5608.0.html">1st in the Neoflash Spring Coding Competition 2009</a>, winning a $300 prize.
 
 Compilation
 ---------------------------------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ Background Information
 
 LuAA was developed for several reasons:
 
-- To be the first ever Nintendo DS homebrew engine that works with an embedded file system.
+- To be the first ever Nintendo DS homebrew game engine that works with an embedded file system.
 - To aid the existing adventure game community with another platform they can migrate their work to (Nintendo DS).
 - To test the extensibility and stability of the <a href="https://github.com/microlua">MicroLua</a> platform.
 
